@@ -6,10 +6,30 @@ resource "github_team" "team" {
   ldap_dn        = var.ldap_dn
 }
 
+locals {
+  members = { for m in var.members : lower(m.username) => merge({
+    role = "member"
+  }, m) }
+}
+
 resource "github_team_membership" "team_membership" {
-  count = length(var.members)
+  for_each = local.members
 
   team_id  = github_team.team.id
-  username = var.members[count.index].username
-  role     = var.members[count.index].role
+  username = each.value.username
+  role     = each.value.role
+}
+
+locals {
+  repositories = { for r in var.repositories : lower(r.name) => merge({
+    permission = "pull"
+  }, r) }
+}
+
+resource "github_team_repository" "team_repository" {
+  for_each = local.repositories
+
+  repository = each.value.name
+  team_id    = github_team.team.id
+  permission = each.value.permission
 }

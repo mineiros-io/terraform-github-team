@@ -11,7 +11,7 @@ variable "description" {
 
 variable "privacy" {
   type        = string
-  description = " The level of privacy for the team. Must be one of secret or closed."
+  description = "The level of privacy for the team. Must be one of secret or closed."
   default     = "secret"
 }
 
@@ -34,6 +34,7 @@ variable "members" {
   }))
   description = "A list of users that should be invited to the current team. Role must must be one of member or maintainer."
   default     = []
+
   # Example:
   # collaborators = [
   #   {
@@ -43,6 +44,31 @@ variable "members" {
   #   {
   #     username   = "username2"
   #     role       = "maintainer"
+  #   }
+  # ]
+}
+
+variable "repositories" {
+  type = list(object({
+    name       = string
+    permission = string
+  }))
+  description = "The list of repositories this team should have access to. Permission must be one of pull, push, or admin."
+  default     = []
+
+  # Example:
+  # repositories = [
+  #   {
+  #     name             = "test-repository-1"
+  #     permission       = "pull"
+  #   },
+  #   {
+  #     name             = "test-repository-2"
+  #     permission       = "push"
+  #   },
+  #   {
+  #     name             = "test-repository-3"
+  #     permission       = "admin"
   #   }
   # ]
 }
