@@ -50,4 +50,3 @@ This module uses https://github.com/terraform-providers/terraform-provider-githu
 For a complete example please see link:/examples[examples] directory.
 
 == Limitations
-- Currently the https://www.terraform.io/docs/providers/github/index.html[GitHub Provider] doesn't support provision new organizations
