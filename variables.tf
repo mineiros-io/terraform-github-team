@@ -27,48 +27,32 @@ variable "ldap_dn" {
   default     = null
 }
 
-variable "members" {
-  type = list(object({
-    username = string
-    role     = string
-  }))
-  description = "A list of users that should be invited to the current team. Role must must be one of member or maintainer."
+variable "maintainers" {
+  type        = list(string)
+  description = "A list of users that will be added to the current team with maintainer permissions."
   default     = []
-
-  # Example:
-  # collaborators = [
-  #   {
-  #     username   = "username1"
-  #     role       = "member"
-  #   },
-  #   {
-  #     username   = "username2"
-  #     role       = "maintainer"
-  #   }
-  # ]
 }
 
-variable "repositories" {
-  type = list(object({
-    name       = string
-    permission = string
-  }))
-  description = "The list of repositories this team should have access to. Permission must be one of pull, push, or admin."
+variable "members" {
+  type        = list(string)
+  description = "A list of users that will be added to the current team with member permissions."
   default     = []
+}
 
-  # Example:
-  # repositories = [
-  #   {
-  #     name             = "test-repository-1"
-  #     permission       = "pull"
-  #   },
-  #   {
-  #     name             = "test-repository-2"
-  #     permission       = "push"
-  #   },
-  #   {
-  #     name             = "test-repository-3"
-  #     permission       = "admin"
-  #   }
-  # ]
+variable "admin_repositories" {
+  type        = list(string)
+  description = "A list of repository names the current team should get admin (full) permission to."
+  default     = []
+}
+
+variable "push_repositories" {
+  type        = list(string)
+  description = "A list of repository names the current team should get push (read-write) permission to."
+  default     = []
+}
+
+variable "pull_repositories" {
+  type        = list(string)
+  description = "A list of repository names the current team should get pull (read-only) permission to."
+  default     = []
 }

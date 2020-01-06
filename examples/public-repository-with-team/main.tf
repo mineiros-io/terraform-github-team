@@ -9,12 +9,12 @@ provider "github" {
 
 resource "github_repository" "repository" {
   name   = "terraform-github-team-module-test-repository-1"
-  topics = ["terrform", "integration-test"]
+  topics = ["terraform", "integration-test"]
 }
 
 resource "github_repository" "another_repository" {
   name   = "terraform-github-team-module-test-repository-2"
-  topics = ["terrform", "integration-test"]
+  topics = ["terraform", "integration-test"]
 }
 
 module "team" {
@@ -24,25 +24,19 @@ module "team" {
   privacy     = "secret"
 
   members = [
-    {
-      username = "terraform-test-user-1"
-      role     = "member"
-    },
-    {
-      username = "terraform-test-user-2"
-      role     = "maintainer"
-    }
+    "terraform-test-user-1"
   ]
 
-  repositories = [
-    {
-      name       = github_repository.repository.name,
-      permission = "pull"
-    },
-    {
-      name       = github_repository.another_repository.name,
-      permission = "push"
-    }
+  maintainers = [
+    "terraform-test-user-2"
+  ]
+
+  pull_repositories = [
+    github_repository.repository.name,
+  ]
+
+  push_repositories = [
+    github_repository.another_repository.name,
   ]
 }
 
