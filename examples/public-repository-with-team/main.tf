@@ -24,14 +24,11 @@ module "team" {
   privacy     = "secret"
 
   members = [
-    {
-      username = "terraform-test-user-1"
-      role     = "member"
-    },
-    {
-      username = "terraform-test-user-2"
-      role     = "maintainer"
-    }
+    "terraform-test-user-1"
+  ]
+
+  maintainers = [
+    "terraform-test-user-2"
   ]
 
   repositories = [

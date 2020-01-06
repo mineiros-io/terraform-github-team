@@ -7,17 +7,18 @@ resource "github_team" "team" {
 }
 
 locals {
-  members = { for m in var.members : lower(m.username) => merge({
-    role = "member"
-  }, m) }
+  maintainers = { for i in var.maintainers : lower(i) => "maintainer" }
+  members     = { for i in var.members : lower(i) => "member" }
+
+  memberships = merge(local.maintainers, local.members)
 }
 
 resource "github_team_membership" "team_membership" {
-  for_each = local.members
+  for_each = local.memberships
 
   team_id  = github_team.team.id
-  username = each.value.username
-  role     = each.value.role
+  username = each.key
+  role     = each.value
 }
 
 locals {

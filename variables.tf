@@ -27,25 +27,16 @@ variable "ldap_dn" {
   default     = null
 }
 
-variable "members" {
-  type = list(object({
-    username = string
-    role     = string
-  }))
-  description = "A list of users that should be invited to the current team. Role must must be one of member or maintainer."
+variable "maintainers" {
+  type        = list(string)
+  description = "A list of users that will be added to the current team with maintainer permissions."
   default     = []
+}
 
-  # Example:
-  # collaborators = [
-  #   {
-  #     username   = "username1"
-  #     role       = "member"
-  #   },
-  #   {
-  #     username   = "username2"
-  #     role       = "maintainer"
-  #   }
-  # ]
+variable "members" {
+  type        = list(string)
+  description = "A list of users that will be added to the current team with member permissions."
+  default     = []
 }
 
 variable "repositories" {
