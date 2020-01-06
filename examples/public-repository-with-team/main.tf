@@ -9,12 +9,12 @@ provider "github" {
 
 resource "github_repository" "repository" {
   name   = "terraform-github-team-module-test-repository-1"
-  topics = ["terrform", "integration-test"]
+  topics = ["terraform", "integration-test"]
 }
 
 resource "github_repository" "another_repository" {
   name   = "terraform-github-team-module-test-repository-2"
-  topics = ["terrform", "integration-test"]
+  topics = ["terraform", "integration-test"]
 }
 
 module "team" {
