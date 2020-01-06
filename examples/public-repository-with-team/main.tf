@@ -19,7 +19,7 @@ resource "github_repository" "another_repository" {
 
 module "team" {
   source      = "../.."
-  name        = "test-team-2"
+  name        = "test-team"
   description = "This team is created with terraform to test the terraformn-github-repository module."
   privacy     = "secret"
 
@@ -44,5 +44,10 @@ module "team" {
       permission = "push"
     }
   ]
+}
 
+module "nested_team" {
+  source         = "../.."
+  name           = "nested-test-team"
+  parent_team_id = module.team.id
 }
