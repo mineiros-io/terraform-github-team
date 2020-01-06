@@ -45,6 +45,7 @@ This module uses https://github.com/terraform-providers/terraform-provider-githu
 * Team
 * Nested Team
 * Memberships
+* Team Repositories
 
 == Examples
 For a complete example please see link:/examples[examples] directory.
