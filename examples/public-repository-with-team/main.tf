@@ -31,15 +31,12 @@ module "team" {
     "terraform-test-user-2"
   ]
 
-  repositories = [
-    {
-      name       = github_repository.repository.name,
-      permission = "pull"
-    },
-    {
-      name       = github_repository.another_repository.name,
-      permission = "push"
-    }
+  pull_repositories = [
+    github_repository.repository.name,
+  ]
+
+  push_repositories = [
+    github_repository.another_repository.name,
   ]
 }
 

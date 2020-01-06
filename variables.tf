@@ -39,27 +39,20 @@ variable "members" {
   default     = []
 }
 
-variable "repositories" {
-  type = list(object({
-    name       = string
-    permission = string
-  }))
-  description = "The list of repositories this team should have access to. Permission must be one of pull, push, or admin."
+variable "admin_repositories" {
+  type        = list(string)
+  description = "A list of repository names the current team should get admin (full) permission to."
   default     = []
+}
 
-  # Example:
-  # repositories = [
-  #   {
-  #     name             = "test-repository-1"
-  #     permission       = "pull"
-  #   },
-  #   {
-  #     name             = "test-repository-2"
-  #     permission       = "push"
-  #   },
-  #   {
-  #     name             = "test-repository-3"
-  #     permission       = "admin"
-  #   }
-  # ]
+variable "push_repositories" {
+  type        = list(string)
+  description = "A list of repository names the current team should get push (read-write) permission to."
+  default     = []
+}
+
+variable "pull_repositories" {
+  type        = list(string)
+  description = "A list of repository names the current team should get pull (read-only) permission to."
+  default     = []
 }

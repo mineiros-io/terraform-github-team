@@ -22,15 +22,17 @@ resource "github_team_membership" "team_membership" {
 }
 
 locals {
-  repositories = { for r in var.repositories : lower(r.name) => merge({
-    permission = "pull"
-  }, r) }
+  repo_admin = { for i in var.admin_repositories : lower(i) => "admin" }
+  repo_push  = { for i in var.push_repositories : lower(i) => "push" }
+  repo_pull  = { for i in var.pull_repositories : lower(i) => "pull" }
+
+  repositories = merge(local.repo_admin, local.repo_push, local.repo_pull)
 }
 
 resource "github_team_repository" "team_repository" {
   for_each = local.repositories
 
-  repository = each.value.name
+  repository = each.key
   team_id    = github_team.team.id
-  permission = each.value.permission
+  permission = each.value
 }
