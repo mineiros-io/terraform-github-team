@@ -53,7 +53,7 @@ This module uses https://github.com/terraform-providers/terraform-provider-githu
 
 [source,hcl]
 ----
-module "cdn" {
+module "team" {
   source = "git::git::git@github.com:mineiros-io/terraform-github-team.git?ref=master"
 
   name        = "DevOps"
