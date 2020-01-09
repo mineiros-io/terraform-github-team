@@ -21,7 +21,7 @@ module "team" {
   source      = "../.."
   name        = "test-team"
   description = "This team is created with terraform to test the terraformn-github-repository module."
-  privacy     = "secret"
+  privacy     = "closed"
 
   members = [
     "terraform-test-user-1"
@@ -44,4 +44,5 @@ module "nested_team" {
   source         = "../.."
   name           = "nested-test-team"
   parent_team_id = module.team.id
+  privacy        = "secret"
 }
