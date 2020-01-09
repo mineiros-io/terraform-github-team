@@ -68,6 +68,7 @@ module "cdn" {
   maintainers = [
     "a-maintainer"
   ]
+
   push_repositories = [
     github_repository.repository.name,
   ]
