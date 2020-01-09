@@ -36,8 +36,9 @@ the necessity to render the whole list of resources again. Terraform will only a
 toc::[]
 
 == Requirements
-This module requires version `~> 0.12.9` of Terraform.
-This module requires version `~> 2.2` of the GitHub provider
+
+* Terraform `~> 0.12.9`
+* Terraform GitHub provider `~> 2.2`
 
 == Features
 This module uses https://github.com/terraform-providers/terraform-provider-github/releases[Terraform GitHub provider v2.2.1] that supports the following resources:
@@ -47,7 +48,59 @@ This module uses https://github.com/terraform-providers/terraform-provider-githu
 * Memberships
 * Team Repositories
 
-== Examples
+== Usage
+
+[source,hcl]
+----
+module "cdn" {
+  source = "git::git::git@github.com:mineiros-io/terraform-github-team.git?ref=master"
+
+  name        = "DevOps"
+  description = "The DevOps Team"
+  privacy     = "secret"
+
+  members = [
+    "a-user",
+    "b-user"
+  ]
+
+  maintainers = [
+    "a-maintainer"
+  ]
+  push_repositories = [
+    github_repository.repository.name,
+  ]
+}
+
+resource "github_repository" "repository" {
+  name   = "a-repository"
+}
+----
+
+[TIP]
+====
+In a production environment you most likely want to stick to a specific version of this module instead of the master
+branch (e.g. ?ref=v0.0.1), because there may be breaking changes between releases.
+====
+
+=== Examples
+
 For a complete example please see link:/examples[examples] directory.
 
-== Limitations
+=== Tests
+This modules ships with a link:Makefile[Makefile] and a link:Dockerfile[Dockerfile] that simplify executing the hooks
+and tests for you.
+
+Execute all pre-commit hooks with Docker:
+[source,shell script]
+----
+make docker-run-pre-commit-hooks
+----
+
+Execute the Unit Test (deploy und undeploy the example):
+[source,shell script]
+----
+GITHUB_ORGANIZATION=YOUR_GITHUB_ORGANIZATION \
+GITHUB_TOKEN=YOUR_GITHUB_TOKEN \
+make docker-run-tests
+----
