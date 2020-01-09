@@ -44,5 +44,5 @@ module "nested_team" {
   source         = "../.."
   name           = "nested-test-team"
   parent_team_id = module.team.id
-  privacy        = "secret"
+  privacy        = "closed"
 }
