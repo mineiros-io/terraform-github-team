@@ -3,18 +3,15 @@ terraform {
 }
 
 provider "github" {
-  token        = var.github_token
-  organization = var.github_organization
+  version = "~> 2.2"
 }
 
 resource "github_repository" "repository" {
-  name   = "terraform-github-team-module-test-repository-1"
-  topics = ["terraform", "integration-test"]
+  name = "terraform-github-team-module-test-repository-1"
 }
 
 resource "github_repository" "another_repository" {
-  name   = "terraform-github-team-module-test-repository-2"
-  topics = ["terraform", "integration-test"]
+  name = "terraform-github-team-module-test-repository-2"
 }
 
 module "team" {
