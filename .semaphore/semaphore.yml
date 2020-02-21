@@ -1,9 +1,11 @@
 version: v1.0
 name: "Terraform-Github-Team CI Pipeline"
+
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
+
 blocks:
   - name: "Build"
     task:
@@ -13,6 +15,7 @@ blocks:
         commands:
           - export BUILD_VERSION=${SEMAPHORE_GIT_SHA:0:7}
           - checkout
+
       jobs:
         - name: "Pre Commit Hooks"
           commands:

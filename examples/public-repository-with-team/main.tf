@@ -1,32 +1,27 @@
-terraform {
-  required_version = "~> 0.12.9"
-}
-
-provider "github" {
-  version = "~> 2.3"
-}
+# ---------------------------------------------------------------------------------------------------------------------
+# CREATE A TEAM AND TWO REPOSITORIES
+#
+# We create a team and two repositories. The team will have pull permissions for one repository and push permissions
+# for the other. We also add lists of members and maintainers to the team.
+# ---------------------------------------------------------------------------------------------------------------------
 
 resource "github_repository" "repository" {
-  name = "terraform-github-team-module-test-repository-1"
+  name = var.a-repository-name
 }
 
 resource "github_repository" "another_repository" {
-  name = "terraform-github-team-module-test-repository-2"
+  name = var.b-repository-name
 }
 
 module "team" {
-  source      = "../.."
-  name        = "test-team"
-  description = "This team is created with terraform to test the terraformn-github-repository module."
-  privacy     = "closed"
+  source = "../.."
 
-  members = [
-    "terraform-test-user-1"
-  ]
+  name        = var.team_name
+  description = var.team_description
+  privacy     = var.team_privacy
 
-  maintainers = [
-    "terraform-test-user-2"
-  ]
+  members     = var.members
+  maintainers = var.maintainers
 
   pull_repositories = [
     github_repository.repository.name,
@@ -37,9 +32,11 @@ module "team" {
   ]
 }
 
-module "nested_team" {
-  source         = "../.."
-  name           = "nested-test-team"
+# Create a child team
+module "child_team" {
+  source = "../.."
+
+  name           = var.nested_team_name
   parent_team_id = module.team.id
-  privacy        = "closed"
+  privacy        = var.nested_team_privacy
 }

@@ -47,6 +47,6 @@ docker/unit-tests:
 		-e GITHUB_ORGANIZATION \
 		-v ${PWD}:${MOUNT_TARGET_DIRECTORY} \
 		${BUILD_TOOLS_DOCKER_IMAGE} \
-		go test -v -timeout 10m -parallel 128 test/github_team_test.go
+		go test -v -timeout 10m -parallel 128 ./test
 
-.PHONY: help docker/pre-commit-hooks docker/run-tests
+.PHONY: help docker/pre-commit-hooks docker/unit-tests
