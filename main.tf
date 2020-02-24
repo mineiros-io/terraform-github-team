@@ -1,3 +1,13 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# CREATE A GITHUB TEAM, TEAM MEMBERSHIPS AND ASSIGN THE TEAM TO REPOSITORIES WITH PERMISSIONS
+#
+# Create a Github team and add users as either members or maintainers. Users that aren't a member of the managed
+# organization yet will receive an invite and hence not be part of the team before they accept the invitation and
+# fulfill potential requirements such as enabled 2FA.
+# This module also accepts a list of repositories to that the team can be added with "admin", "push", or "pull"
+# permissions.
+# ---------------------------------------------------------------------------------------------------------------------
+
 resource "github_team" "team" {
   name           = var.name
   description    = var.description

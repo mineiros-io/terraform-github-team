@@ -37,7 +37,7 @@ docker/pre-commit-hooks:
 	@docker run --rm \
 		-v ${PWD}:${MOUNT_TARGET_DIRECTORY} \
 		${BUILD_TOOLS_DOCKER_IMAGE} \
-		sh -c "pre-commit install && pre-commit run --all-files"
+		sh -c "pre-commit run -a"
 
 ## Mounts the working directory inside a new container and runs the Go tests. Requires $GITHUB_TOKEN and $GITHUB_ORGANIZATION to be set
 docker/unit-tests:

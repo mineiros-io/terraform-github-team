@@ -1,6 +1,7 @@
 package test
 
 import (
+	"fmt"
 	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"gotest.tools/assert"
@@ -26,16 +27,16 @@ func init() {
 func TestGithubTeam(t *testing.T) {
 	t.Parallel()
 
-	repositoryA := random.UniqueId()
-	repositoryB := random.UniqueId()
-	teamName := random.UniqueId()
+	repositoryA := fmt.Sprintf("a-repository-%s", random.UniqueId())
+	repositoryB := fmt.Sprintf("b-repository-%s", random.UniqueId())
+	teamName := fmt.Sprintf("team-%s", random.UniqueId())
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
 		TerraformDir: "../examples/public-repository-with-team",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"team_name":              teamName,
+			"team_name":         teamName,
 			"a-repository-name": repositoryA,
 			"b-repository-name": repositoryB,
 		},
