@@ -1,3 +1,6 @@
+# Set default shell to bash
+SHELL := /bin/bash
+
 MOUNT_TARGET_DIRECTORY  = /app/src
 BUILD_TOOLS_DOCKER_REPO = mineiros/build-tools
 
