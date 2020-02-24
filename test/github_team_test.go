@@ -1,7 +1,9 @@
 package test
 
 import (
+	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/gruntwork-io/terratest/modules/terraform"
+	"gotest.tools/assert"
 	"os"
 	"testing"
 )
@@ -24,10 +26,19 @@ func init() {
 func TestGithubTeam(t *testing.T) {
 	t.Parallel()
 
+	repositoryA := random.UniqueId()
+	repositoryB := random.UniqueId()
+	teamName := random.UniqueId()
+
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
 		TerraformDir: "../examples/public-repository-with-team",
 		Upgrade:      true,
+		Vars: map[string]interface{}{
+			"team_name":              teamName,
+			"a-repository-name": repositoryA,
+			"b-repository-name": repositoryB,
+		},
 	}
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
@@ -35,4 +46,11 @@ func TestGithubTeam(t *testing.T) {
 
 	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
+
+	// Validate the names of the repositoriees
+	assert.Equal(t, repositoryA, terraform.Output(t, terraformOptions, "first_repository_name"))
+	assert.Equal(t, repositoryB, terraform.Output(t, terraformOptions, "second_repository_name"))
+
+	// Validate if the created teams name
+	assert.Equal(t, teamName, terraform.Output(t, terraformOptions, "team_name"))
 }

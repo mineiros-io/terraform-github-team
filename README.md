@@ -1,16 +1,3 @@
-// AsciiDoc TOC settings
-:toc:
-:toc-placement!:
-:toc-title:
-
-// GitHub Flavored Asciidoc (GFA). See https://gist.github.com/dcode/0cfbf2699a1fe9b46ff04c41721dda74 for details.
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
-:caution-caption: :fire:
-:warning-caption: :warning:
-endif::[]
 
 = terraform-github-team
 
