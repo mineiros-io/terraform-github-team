@@ -30,7 +30,7 @@ A [Terraform](https://www.terraform.io) 0.12 that offers a more convenient and t
 - [License](#license)
 
 ## Features
-This module uses the [Terraform GitHub provider v2.3](https://github.com/terraform-providers/terraform-provider-github/releases)
+This module uses the [Terraform GitHub provider v2.4](https://github.com/terraform-providers/terraform-provider-github/releases)
 that supports the following resources:
 
 * Team
