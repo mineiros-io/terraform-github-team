@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/t8IkKoZl.png" width="200"/>
 
 [![Maintained by Mineiros.io](https://img.shields.io/badge/maintained%20by-mineiros.io-00607c.svg)](https://www.mineiros.io/ref=terraform-github-team)
-[![Build Status](https://mineiros.semaphoreci.com/badges/terraform-github-team/branches/master.svg?style=shields)](https://mineiros.semaphoreci.com/badges/terraform-github-team/branches/master.svg?style=shields)
+[![Build Status](https://mineiros.semaphoreci.com/badges/terraform-github-team/branches/master.svg?style=shields)](https://mineiros.semaphoreci.com/projects/terraform-github-team)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver)](https://github.com/mineiros-io/terraform-github-team/releases)
 [![Terraform Version](https://img.shields.io/badge/terraform-~%3E%200.12.20-brightgreen.svg)](https://github.com/hashicorp/terraform/releases)
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -17,6 +17,18 @@ A [Terraform](https://www.terraform.io) 0.12 that offers a more convenient and t
 > You can now dynamically add and remove items from and to Lists without the necessity to render the whole list of
 > resources again. Terraform will only add and remove the items you want it to.
 
+- [Module Features](#features)
+- [Getting Started](#getting-started)
+- [Module Argument Reference](#module-argument-reference)
+- [Module Attributes Reference](#module-attributes-reference)
+- [Examples](#examples)
+- [Tests](#tests)
+- [Module Versioning](#module-versioning)
+- [About Mineiros](#about-mineiros)
+- [Reporting Issues](#reporting-issues)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 This module uses the [Terraform GitHub provider v2.3](https://github.com/terraform-providers/terraform-provider-github/releases)
 that supports the following resources:
@@ -26,12 +38,9 @@ that supports the following resources:
 * Memberships
 * Team Repositories
 
-## Usage
+## Getting Started
 
 ```
-# In a production environment you most likely want to stick to a specific version of this module instead of the master
-# branch (e.g. ?ref=v0.0.1), because there may be breaking changes between releases.
-
 module "team" {
   source  = "mineiros-io/team/github"
   version = "0.0.1"
@@ -63,13 +72,18 @@ resource "github_repository" "repository" {
 
 For a complete example please see [examples](https://github.com/mineiros-io/terraform-github-team/tree/master/examples) directory.
 
+## Makefile Targets
+This repository comes with a handy
+[Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile).
+Run `make help` to see details on each available target.
+
 ## Tests
 This modules ships with a [Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile) 
 that offers targets to execute the hooks and tests.
 
 **Execute all pre-commit hooks with Docker:**
 ```
-make docker-run-pre-commit-hooks
+make docker/pre-commit-hooks
 ```
 
 **Execute the Unit Test (deploy und undeploy the example):**
@@ -78,7 +92,7 @@ Running the tests will create and destroy real resources.
 ```
 GITHUB_ORGANIZATION=YOUR_GITHUB_ORGANIZATION \
 GITHUB_TOKEN=YOUR_GITHUB_TOKEN \
-make docker-run-tests
+make docker/unit-tests
 ```
 
 ## Module Versioning
@@ -89,7 +103,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 2) Use the `MINOR` version when adding functionality in a backwards compatible manner.
 3) Use the `PATCH` version when introducing backwards compatible bug fixes.
 
-#### Backwards compatibility in `0.0.z` and `0.y.z` version
+### Backwards compatibility in `0.0.z` and `0.y.z` version
 - In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is 
   increased. (Initial development)
 - In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is
@@ -113,11 +127,6 @@ to track community reported issues and missing features.
 Contributions are always encouraged and welcome! For the process of accepting changes, we use
 [Pull Requests](https://github.com/mineiros-io/terraform-github-team/pulls). If you’d like more information, please
 see our [Contribution Guidelines](https://github.com/mineiros-io/terraform-github-team/blob/master/CONTRIBUTING.md).
-
-### Makefile Targets
-This repository comes with a handy
-[Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile).
-Run `make help` to see details on each available target.
 
 ## License
 This module is licensed under the Apache License Version 2.0, January 2004.

@@ -2,11 +2,12 @@ package test
 
 import (
 	"fmt"
+	"os"
+	"testing"
+
 	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"gotest.tools/assert"
-	"os"
-	"testing"
 )
 
 var githubOrganization, githubToken string
