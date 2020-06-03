@@ -30,7 +30,9 @@ A [Terraform](https://www.terraform.io) 0.12 that offers a more convenient and t
 - [Makefile Targets](#makefile-targets-1)
 - [License](#license)
 
+
 ## Features
+
 This module uses the [Terraform GitHub provider v2.4](https://github.com/terraform-providers/terraform-provider-github/releases)
 that supports the following resources:
 
@@ -74,23 +76,27 @@ resource "github_repository" "repository" {
 For a complete example please see [examples](https://github.com/mineiros-io/terraform-github-team/tree/master/examples) directory.
 
 ## Makefile Targets
+
 This repository comes with a handy
 [Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile).
 Run `make help` to see details on each available target.
 
 ## Tests
+
 This modules ships with a [Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile) 
 that offers targets to execute the hooks and tests.
 
 **Execute all pre-commit hooks with Docker:**
-```
+
+```bash
 make docker/pre-commit-hooks
 ```
 
 **Execute the Unit Test (deploy und undeploy the example):**
 Please be aware, that in order to run the test you must provide GitHub credentials and an organization.
 Running the tests will create and destroy real resources.
-```
+
+```bash
 GITHUB_ORGANIZATION=YOUR_GITHUB_ORGANIZATION \
 GITHUB_TOKEN=YOUR_GITHUB_TOKEN \
 make docker/unit-tests
