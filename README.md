@@ -1,6 +1,6 @@
-[<img src="https://raw.githubusercontent.com/mineiros-io/brand/master/mineiros-primary-logo.svg" width="400"/>](https://mineiros.io/?ref=terraform-github-team)
+[<img src="https://raw.githubusercontent.com/mineiros-io/brand/master/mineiros-primary-logo.svg" width="400"/>](https://www.mineiros.io/?ref=terraform-github-team)
 
-[![Build Status](https://mineiros.semaphoreci.com/badges/terraform-github-team/branches/master.svg?style=shields&key=df11a416-f581-4d35-917a-fa3c2de2048e)](https://mineiros.semaphoreci.com/projects/terraform-github-team)
+[![Build Status](https://mineiros.semaphoreci.com/badges/terraform-github-team/branches/master.svg?style=shields)](https://mineiros.semaphoreci.com/projects/terraform-github-team)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver)](https://github.com/mineiros-io/terraform-github-team/releases)
 [![license](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Terraform Version](https://img.shields.io/badge/terraform-~%3E%200.12.20-623CE4.svg)](https://github.com/hashicorp/terraform/releases)
@@ -27,23 +27,21 @@ A [Terraform](https://www.terraform.io) 0.12 that offers a more convenient and t
 - [About Mineiros](#about-mineiros)
 - [Reporting Issues](#reporting-issues)
 - [Contributing](#contributing)
-- [Makefile Targets](#makefile-targets-1)
 - [License](#license)
-
 
 ## Features
 
 This module uses the [Terraform GitHub provider v2.4](https://github.com/terraform-providers/terraform-provider-github/releases)
 that supports the following resources:
 
-* Team
-* Nested Team
-* Memberships
-* Team Repositories
+- Team
+- Nested Team
+- Memberships
+- Team Repositories
 
 ## Getting Started
 
-```
+```hcl
 module "team" {
   source  = "mineiros-io/team/github"
   version = "0.0.1"
@@ -83,7 +81,7 @@ Run `make help` to see details on each available target.
 
 ## Tests
 
-This modules ships with a [Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile) 
+This modules ships with a [Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile)
 that offers targets to execute the hooks and tests.
 
 **Execute all pre-commit hooks with Docker:**
@@ -93,6 +91,7 @@ make docker/pre-commit-hooks
 ```
 
 **Execute the Unit Test (deploy und undeploy the example):**
+
 Please be aware, that in order to run the test you must provide GitHub credentials and an organization.
 Running the tests will create and destroy real resources.
 
@@ -121,14 +120,15 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## About Mineiros
 
-Mineiros is a [DevOps as a Service](https://mineiros.io/?ref=terraform-github-team) company based in Berlin, Germany. We offer commercial support
+Mineiros is a [DevOps as a Service](https://www.mineiros.io/?ref=terraform-github-team) company based in Berlin, Germany. We offer commercial support
 for all of our projects and encourage you to reach out if you have any questions or need help.
 Feel free to send us an email at [hello@mineiros.io](mailto:hello@mineiros.io).
 
 We can also help you with:
 
-- Terraform modules for all types of infrastructure such as VPCs, Docker clusters, databases, logging and monitoring, CI, etc.
-- Consulting & training on AWS, Terraform and DevOps
+- Terraform Modules for all types of infrastructure such as VPC's, Docker clusters,
+  databases, logging and monitoring, CI, etc.
+- Consulting & Training on AWS, Terraform and DevOps.
 
 ## Reporting Issues
 
@@ -138,14 +138,8 @@ to track community reported issues and missing features.
 ## Contributing
 
 Contributions are always encouraged and welcome! For the process of accepting changes, we use
-[Pull Requests](https://github.com/mineiros-io/terraform-github-team/pulls). If you'd like more information, please
+[Pull Requests](https://github.com/mineiros-io/terraform-github-team/pulls). If you’d like more information, please
 see our [Contribution Guidelines](https://github.com/mineiros-io/terraform-github-team/blob/master/CONTRIBUTING.md).
-
-## Makefile Targets
-
-This repository comes with a handy
-[Makefile](https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile).
-Run `make help` to see details on each available target.
 
 ## License
 
