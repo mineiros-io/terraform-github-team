@@ -1,4 +1,4 @@
-[<img src="https://raw.githubusercontent.com/mineiros-io/brand/master/mineiros-primary-logo.svg" width="400"/>](https://www.mineiros.io/?ref=terraform-github-team)
+[<img src="https://raw.githubusercontent.com/mineiros-io/brand/3bffd30e8bdbbde32c143e2650b2faa55f1df3ea/mineiros-primary-logo.svg" width="400"/>](https://www.mineiros.io/?ref=terraform-github-team)
 
 [![Build Status](https://mineiros.semaphoreci.com/badges/terraform-github-team/branches/master.svg?style=shields)](https://mineiros.semaphoreci.com/projects/terraform-github-team)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver)](https://github.com/mineiros-io/terraform-github-team/releases)
