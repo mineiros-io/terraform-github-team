@@ -4,17 +4,17 @@
 
 output "id" {
   description = "The ID of the team."
-  value       = try(github_team.team[0].id, null)
+  value       = github_team.team.id
 }
 
 output "team_name" {
   description = "The name of the team."
-  value       = try(github_team.team[0].name, null)
+  value       = github_team.team.name
 }
 
 output "slug" {
   description = "The Slug of the team."
-  value       = try(github_team.team[0].slug, null)
+  value       = github_team.team.slug
 }
 
 # ------------------------------------------------------------------------------
@@ -23,17 +23,17 @@ output "slug" {
 
 output "team" {
   description = "The full team object."
-  value       = try(github_team.team[0], {})
+  value       = github_team.team
 }
 
 output "team_memberships" {
   description = "A list of all team memberships."
-  value       = try(github_team_membership.team_membership, null)
+  value       = github_team_membership.team_membership
 }
 
 output "team_repositories" {
   description = "A list of all team repositories"
-  value       = try(github_team_repository.team_repository, null)
+  value       = github_team_repository.team_repository
 }
 
 # ------------------------------------------------------------------------------
@@ -93,8 +93,3 @@ output "pull_repositories" {
 # ------------------------------------------------------------------------------
 # OUTPUT MODULE CONFIGURATION
 # ------------------------------------------------------------------------------
-
-output "module_enabled" {
-  description = "Whether the module is enabled"
-  value       = var.module_enabled
-}

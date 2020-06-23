@@ -9,8 +9,6 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "github_team" "team" {
-  count = var.module_enabled ? 1 : 0
-
   name           = var.name
   description    = var.description
   privacy        = var.privacy
@@ -28,9 +26,9 @@ locals {
 }
 
 resource "github_team_membership" "team_membership" {
-  for_each = var.module_enabled ? local.memberships : {}
+  for_each = local.memberships
 
-  team_id  = github_team.team[0].id
+  team_id  = github_team.team.id
   username = each.key
   role     = each.value
 
@@ -46,10 +44,10 @@ locals {
 }
 
 resource "github_team_repository" "team_repository" {
-  for_each = var.module_enabled ? local.repositories : {}
+  for_each = local.repositories
 
   repository = each.key
-  team_id    = github_team.team[0].id
+  team_id    = github_team.team.id
   permission = each.value
 
   depends_on = [var.module_depends_on]

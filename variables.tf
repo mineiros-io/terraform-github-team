@@ -48,49 +48,19 @@ variable "ldap_dn" {
 variable "maintainers" {
   description = "(Optional) A list of users that will be added to the current team with maintainer permissions."
   type        = set(string)
-
-  #
-  # Example:
-  #
-  # maintainers = [
-  #   "bob",
-  #   "alice"
-  # ]
-  #
-
-  default = []
+  default     = []
 }
 
 variable "members" {
   description = "(Optional) A list of users that will be added to the current team with member permissions."
   type        = set(string)
-
-  #
-  # Example:
-  #
-  # members = [
-  #   "bob",
-  #   "alice"
-  # ]
-  #
-
-  default = []
+  default     = []
 }
 
 variable "admin_repositories" {
   description = "(Optional) A list of repository names the current team should get admin (full) permission to."
   type        = set(string)
-
-  #
-  # Example:
-  #
-  # admin_repositories = [
-  #   "bob",
-  #   "alice"
-  # ]
-  #
-
-  default = []
+  default     = []
 }
 
 variable "push_repositories" {
@@ -110,12 +80,6 @@ variable "pull_repositories" {
 # These variables are used to configure the module.
 # See https://medium.com/mineiros/the-ultimate-guide-on-how-to-write-terraform-modules-part-1-81f86d31f024
 # ------------------------------------------------------------------------------
-
-variable "module_enabled" {
-  type        = bool
-  description = "(Optional) Whether to create resources within the module or not. Default is true."
-  default     = true
-}
 
 variable "module_depends_on" {
   type        = any

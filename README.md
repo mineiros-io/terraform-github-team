@@ -8,18 +8,23 @@
 
 # terraform-github-team
 
-A [Terraform] ~> 0.12 module that offers a more convenient and tested way to provision and manage [GitHub teams].
+A [Terraform] 0.12 module that offers a more convenient and tested way to provision and manage [GitHub teams].
 
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Examples](#examples)
-- [Makefile Targets](#makefile-targets)
-- [Tests](#tests)
+- [Module Argument Reference](#module-argument-reference)
+  - [Top-level Arguments](#top-level-arguments)
+    - [Module Configuration](#module-configuration)
+    - [Main Resource Configuration](#main-resource-configuration)
+- [Module Attributes Reference](#module-attributes-reference)
+- [External Documentation](#external-documentation)
 - [Module Versioning](#module-versioning)
   - [Backwards compatibility in `0.0.z` and `0.y.z` version](#backwards-compatibility-in-00z-and-0yz-version)
 - [About Mineiros](#about-mineiros)
 - [Reporting Issues](#reporting-issues)
 - [Contributing](#contributing)
+- [Makefile Targets](#makefile-targets)
 - [License](#license)
 
 ## Features
@@ -74,53 +79,58 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 #### Module Configuration
 
-- **`module_enabled`**: *(Optional `bool`)*
-
-  Specifies whether resources in the module will be created.
-  Default is `true`.
-
 - **`module_depends_on`**: *(Optional `list(any)`)*
 
   A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
 
 #### Main Resource Configuration
 
-- **`name`**: *(Required `string`)*
+- **`name`**: **(Required `string`)**
+
   The name of the team.
 
 - **`push_repositories`**: *(Optional `set(string)`)*
+
   A list of repository names the current team should get push (read-write) permission to.
   Default is `[]`.
 
 - **`pull_repositories`**: *(Optional `set(string)`)*
+
   A list of repository names the current team should get pull (read-only) permission to.
   Default is `[]`.
 
 - **`maintainers`**: *(Optional `set(string)`)*
+
   A list of users that will be added to the current team with maintainer permissions.
   Default is `[]`.
 
 - **`members`**: *(Optional `set(string)`)*
+
   A list of users that will be added to the current team with member permissions.
   Default is `[]`.
 
 - **`admin_repositories`**: *(Optional `set(string)`)*
+
   A list of repository names the current team should get admin (full) permission to.
   Default is `[]`.
 
 - **`description`**: *(Optional `string`)*
+
   A description of the team.
   Default is `""`.
 
 - **`privacy`**: *(Optional `string`)*
+
   The level of privacy for the team. Must be one of `secret` or `closed`.
-  Default is `""`.
+  Default is `"secret"`.
 
 - **`parent_team_id`**: *(Optional `number`)*
+
   The ID of the parent team, if this is a nested team.
-  Default is `null`.
+  Default is to create a root team without a parent.
 
 - **`ldap_dn`**: *(Optional `string`)*
+
   The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise.
   Default is `null`.
 
@@ -128,9 +138,9 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 The following attributes are exported by the module:
 
-- **`module_enabled`**
+- **`module_depends_on`**
 
-  Whether this module is enabled.
+  A list of external resources the module depends_on.
 
 ## External Documentation
 
