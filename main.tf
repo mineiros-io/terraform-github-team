@@ -9,11 +9,15 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "github_team" "team" {
+  count = var.module_enabled ? 1 : 0
+
   name           = var.name
   description    = var.description
   privacy        = var.privacy
   parent_team_id = var.parent_team_id
   ldap_dn        = var.ldap_dn
+
+  depends_on = [var.module_depends_on]
 }
 
 locals {
@@ -24,11 +28,13 @@ locals {
 }
 
 resource "github_team_membership" "team_membership" {
-  for_each = local.memberships
+  for_each = var.module_enabled ? local.memberships : {}
 
-  team_id  = github_team.team.id
+  team_id  = github_team.team[0].id
   username = each.key
   role     = each.value
+
+  depends_on = [var.module_depends_on]
 }
 
 locals {
@@ -40,9 +46,11 @@ locals {
 }
 
 resource "github_team_repository" "team_repository" {
-  for_each = local.repositories
+  for_each = var.module_enabled ? local.repositories : {}
 
   repository = each.key
-  team_id    = github_team.team.id
+  team_id    = github_team.team[0].id
   permission = each.value
+
+  depends_on = [var.module_depends_on]
 }
