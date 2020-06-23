@@ -8,7 +8,7 @@
 
 # terraform-github-team
 
-A [Terraform] ~>0.12 module that offers a more convenient and tested way to provision and manage [GitHub teams].
+A [Terraform] ~> 0.12 module that offers a more convenient and tested way to provision and manage [GitHub teams].
 
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -64,7 +64,7 @@ resource "github_repository" "repository" {
 
 ## Examples
 
-For a complete example please see [examples](https://github.com/mineiros-io/terraform-github-team/tree/master/examples) directory.
+For a complete example please see [examples/] directory.
 
 ## Module Argument Reference
 
@@ -132,11 +132,10 @@ The following attributes are exported by the module:
 
   Whether this module is enabled.
 
-- **`output_1`**
-
-  The full `resource` object with all its attributes.
-
 ## External Documentation
+
+- GitHub Provider Documentation
+  - https://www.terraform.io/docs/providers/github/index.html
 
 ## Module Versioning
 
@@ -157,11 +156,13 @@ Given a version number `MAJOR.MINOR.PATCH`, we increment the:
 
 Mineiros is a [DevOps as a Service][homepage] company based in Berlin, Germany.
 We offer commercial support for all of our projects and encourage you to reach out
-if you have any questions or need help. Feel free to send us an email at [hello@mineiros.io] or join our [Community Slack channel][slack].
+if you have any questions or need help. Feel free to send us an email at [hello@mineiros.io]
+or join our [Community Slack channel][slack].
 
 We can also help you with:
 
-- Terraform modules for all types of infrastructure such as VPCs, Docker clusters, databases, logging and monitoring, CI, etc.
+- Terraform modules for all types of infrastructure such as VPCs, Docker clusters, databases,
+  logging and monitoring, CI, etc.
 - Consulting & training on AWS, Terraform and DevOps
 
 ## Reporting Issues
@@ -170,7 +171,7 @@ We use GitHub [Issues] to track community reported issues and missing features.
 
 ## Contributing
 
-Contributions are always encouraged and welcome! For the process of accepting changes, we use
+Contributions are encouraged and welcome! For the process of accepting changes, we use
 [Pull Requests]. If you'd like more information, please see our [Contribution Guidelines].
 
 ## Makefile Targets
@@ -209,7 +210,7 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [Github teams](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/organizing-members-into-teams)
 
 [variables.tf]: https://github.com/mineiros-io/terraform-github-team/blob/master/variables.tf
-[examples/]: https://github.com/mineiros-io/terraform-github-team/blob/master/examples
+[examples/]: https://github.com/mineiros-io/terraform-github-team/tree/master/examples
 [Issues]: https://github.com/mineiros-io/terraform-github-team/issues
 [LICENSE]: https://github.com/mineiros-io/terraform-github-team/blob/master/LICENSE
 [Makefile]: https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile
