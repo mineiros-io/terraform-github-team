@@ -12,7 +12,7 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 variable "name" {
-  description = "The name of the team."
+  description = "(Required) The name of the team."
   type        = string
 }
 
@@ -22,79 +22,67 @@ variable "name" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 variable "description" {
-  description = "A description of the team."
+  description = "(Optional) A description of the team."
   type        = string
   default     = ""
 }
 
 variable "privacy" {
-  description = "The level of privacy for the team. Must be one of secret or closed."
+  description = "(Optional) The level of privacy for the team. Must be one of secret or closed."
   type        = string
   default     = "secret"
 }
 
 variable "parent_team_id" {
-  description = "The ID of the parent team, if this is a nested team."
+  description = "(Optional) The ID of the parent team, if this is a nested team."
   type        = number
   default     = null
 }
 
 variable "ldap_dn" {
-  description = "The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise."
+  description = "(Optional) The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise."
   type        = string
   default     = null
 }
 
 variable "maintainers" {
-  description = "A list of users that will be added to the current team with maintainer permissions."
-  #
-  # Example:
-  #
-  # maintainers = [
-  #   "bob",
-  #   "alice"
-  # ]
-  #
-  type    = set(string)
-  default = []
+  description = "(Optional) A list of users that will be added to the current team with maintainer permissions."
+  type        = set(string)
+  default     = []
 }
 
 variable "members" {
-  description = "A list of users that will be added to the current team with member permissions."
+  description = "(Optional) A list of users that will be added to the current team with member permissions."
   type        = set(string)
-  #
-  # Example:
-  #
-  # members = [
-  #   "bob",
-  #   "alice"
-  # ]
-  #
-  default = []
+  default     = []
 }
 
 variable "admin_repositories" {
-  description = "A list of repository names the current team should get admin (full) permission to."
+  description = "(Optional) A list of repository names the current team should get admin (full) permission to."
   type        = set(string)
-  #
-  # Example:
-  #
-  # admin_reporitores = [
-  #   "bob",
-  #   "alice"
-  # ]
-  #
-  default = []
+  default     = []
 }
 
 variable "push_repositories" {
-  description = "A list of repository names the current team should get push (read-write) permission to."
+  description = "(Optional) A list of repository names the current team should get push (read-write) permission to."
   type        = set(string)
   default     = []
 }
 
 variable "pull_repositories" {
-  description = "A list of repository names the current team should get pull (read-only) permission to."
+  description = "(Optional) A list of repository names the current team should get pull (read-only) permission to."
   type        = set(string)
+  default     = []
+}
+
+# ------------------------------------------------------------------------------
+# MODULE CONFIGURATION PARAMETERS
+# These variables are used to configure the module.
+# See https://medium.com/mineiros/the-ultimate-guide-on-how-to-write-terraform-modules-part-1-81f86d31f024
+# ------------------------------------------------------------------------------
+
+variable "module_depends_on" {
+  type        = any
+  description = "(Optional) A list of external resources the module depends_on. Default is []."
   default     = []
 }

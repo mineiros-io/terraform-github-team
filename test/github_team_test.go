@@ -34,7 +34,7 @@ func TestGithubTeam(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
-		TerraformDir: "public-repository-with-team",
+		TerraformDir: "public-repositories-with-team",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
 			"team_name":         teamName,

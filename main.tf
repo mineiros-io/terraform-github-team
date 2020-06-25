@@ -14,6 +14,8 @@ resource "github_team" "team" {
   privacy        = var.privacy
   parent_team_id = var.parent_team_id
   ldap_dn        = var.ldap_dn
+
+  depends_on = [var.module_depends_on]
 }
 
 locals {
@@ -29,6 +31,8 @@ resource "github_team_membership" "team_membership" {
   team_id  = github_team.team.id
   username = each.key
   role     = each.value
+
+  depends_on = [var.module_depends_on]
 }
 
 locals {
@@ -45,4 +49,6 @@ resource "github_team_repository" "team_repository" {
   repository = each.key
   team_id    = github_team.team.id
   permission = each.value
+
+  depends_on = [var.module_depends_on]
 }
