@@ -206,7 +206,6 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [badge-license]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg
 [badge-terraform]: https://img.shields.io/badge/terraform-0.13%20and%200.12.20+-623CE4.svg?logo=terraform
 [badge-slack]: https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack
-
 [build-status]: https://mineiros.semaphoreci.com/projects/terraform-github-team
 [releases-github]: https://github.com/mineiros-io/terraform-github-team/releases
 
@@ -217,8 +216,6 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [AWS]: https://aws.amazon.com/
 [Semantic Versioning (SemVer)]: https://semver.org/
 
-[Github teams](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/organizing-members-into-teams)
-
 [variables.tf]: https://github.com/mineiros-io/terraform-github-team/blob/master/variables.tf
 [examples/]: https://github.com/mineiros-io/terraform-github-team/tree/master/examples
 [Issues]: https://github.com/mineiros-io/terraform-github-team/issues
@@ -226,3 +223,4 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [Makefile]: https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile
 [Pull Requests]: https://github.com/mineiros-io/terraform-github-team/pulls
 [Contribution Guidelines]: https://github.com/mineiros-io/terraform-github-team/blob/master/CONTRIBUTING.md
+[Github teams]: https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/organizing-members-into-teams
