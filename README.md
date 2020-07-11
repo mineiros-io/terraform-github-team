@@ -201,12 +201,12 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [homepage]: https://mineiros.io/?ref=terraform-github-team
 [hello@mineiros.io]: mailto:hello@mineiros.io
 
-[badge-build]: https://mineiros.semaphoreci.com/badges/terraform-github-team/branches/master.svg?style=shields
+[badge-build]: https://github.com/mineiros-io/terraform-github-team/workflows/CI/CD%20Pipeline/badge.svg
 [badge-semver]: https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver
 [badge-license]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg
 [badge-terraform]: https://img.shields.io/badge/terraform-0.13%20and%200.12.20+-623CE4.svg?logo=terraform
 [badge-slack]: https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack
-[build-status]: https://mineiros.semaphoreci.com/projects/terraform-github-team
+[build-status]: https://github.com/mineiros-io/terraform-github-team/actions
 [releases-github]: https://github.com/mineiros-io/terraform-github-team/releases
 
 [releases-terraform]: https://github.com/hashicorp/terraform/releases
