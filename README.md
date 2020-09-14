@@ -45,7 +45,7 @@ that supports the following resources:
 ```hcl
 module "team" {
   source  = "mineiros-io/team/github"
-  version = "0.0.1"
+  version = "~> 0.2.0"
 
   name        = "DevOps"
   description = "The DevOps Team"

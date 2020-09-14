@@ -14,12 +14,12 @@ for the other. We also add lists of members and maintainers to the team.
 
 The code in [main.tf] defines two public GitHub repository and two nested
 GitHub teams. The team will be granted pull permissions to the one repository
-and push permissions to the other. 
+and push permissions to the other.
 
 ```hcl
 module "team" {
   source  = "mineiros-io/team/github"
-  version = "0.1.3"
+  version = "~> 0.2.0"
 
   name        = "Engineering"
   description = "This team is created with terraform to test the terraformn-github-repository module."
@@ -39,7 +39,7 @@ module "team" {
 
 module "child_team" {
   source  = "mineiros-io/team/github"
-  version = "0.1.3"
+  version = "~> 0.2.0"
 
   name           = "DevOps"
   parent_team_id = module.team.id
