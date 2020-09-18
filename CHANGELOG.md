@@ -8,11 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.0]
 ### Added
-- Add `CHANGELOG.md`.
+- Add `CHANGELOG.md`
+- Add support for Terraform v0.13.x
+- Add support for Terraform Github Provider v3.x
+- Prepare support for Terraform v0.14.x (needs terraform v0.12.20 or above)
 ### Changed
-- Add support for Terraform 0.13.x.
-- Add support for Terraform Github provider 3.x.
-- Switch CI from SemaphoreCI to GitHub Actions.
+- Switch CI from SemaphoreCI to GitHub Actions
 
 ## [0.1.3] - 2020-03-05
 ### Added
