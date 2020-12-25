@@ -7,7 +7,6 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	"gotest.tools/assert"
 )
 
 var githubOrganization, githubToken string
@@ -48,11 +47,4 @@ func TestGithubTeam(t *testing.T) {
 
 	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
-
-	// Validate the names of the repositoriees
-	assert.Equal(t, repositoryA, terraform.Output(t, terraformOptions, "first_repository_name"))
-	assert.Equal(t, repositoryB, terraform.Output(t, terraformOptions, "second_repository_name"))
-
-	// Validate if the created teams name
-	assert.Equal(t, teamName, terraform.Output(t, terraformOptions, "team_name"))
 }
