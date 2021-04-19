@@ -10,8 +10,8 @@
 
 A [Terraform] module that offers a more convenient and tested way to provision and manage [GitHub teams].
 
-***This module supports Terraform v0.13 as well as v0.12.9 and above
-and is compatible with the Terraform Github Provider v3 as well as v2.4 and above.***
+**_This module supports Terraform v0.13 as well as v0.12.9 and above
+and is compatible with the Terraform Github Provider v4, v3 as well as v2.4 and above._**
 
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -32,8 +32,8 @@ and is compatible with the Terraform Github Provider v3 as well as v2.4 and abov
 
 ## Features
 
-*This module supports Terraform v0.14, v0.13 as well as v0.12.9 and above
-and is compatible with the Terraform Github Provider v3 as well as v2.4 and above.*
+_This module supports Terraform v0.14, v0.13 as well as v0.12.9 and above
+and is compatible with the Terraform Github Provider v3 as well as v2.4 and above._
 
 This module supports the following resources:
 
@@ -47,7 +47,7 @@ This module supports the following resources:
 ```hcl
 module "team" {
   source  = "mineiros-io/team/github"
-  version = "~> 0.3.0"
+  version = "~> 0.4.0"
 
   name        = "DevOps"
   description = "The DevOps Team"
@@ -84,7 +84,7 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 #### Module Configuration
 
-- **`module_depends_on`**: *(Optional `list(any)`)*
+- **`module_depends_on`**: _(Optional `list(any)`)_
 
   A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
 
@@ -94,47 +94,47 @@ See [variables.tf] and [examples/] for details and use-cases.
 
   The name of the team.
 
-- **`push_repositories`**: *(Optional `set(string)`)*
+- **`push_repositories`**: _(Optional `set(string)`)_
 
   A list of repository names the current team should get push (read-write) permission to.
   Default is `[]`.
 
-- **`pull_repositories`**: *(Optional `set(string)`)*
+- **`pull_repositories`**: _(Optional `set(string)`)_
 
   A list of repository names the current team should get pull (read-only) permission to.
   Default is `[]`.
 
-- **`maintainers`**: *(Optional `set(string)`)*
+- **`maintainers`**: _(Optional `set(string)`)_
 
   A list of users that will be added to the current team with maintainer permissions.
   Default is `[]`.
 
-- **`members`**: *(Optional `set(string)`)*
+- **`members`**: _(Optional `set(string)`)_
 
   A list of users that will be added to the current team with member permissions.
   Default is `[]`.
 
-- **`admin_repositories`**: *(Optional `set(string)`)*
+- **`admin_repositories`**: _(Optional `set(string)`)_
 
   A list of repository names the current team should get admin (full) permission to.
   Default is `[]`.
 
-- **`description`**: *(Optional `string`)*
+- **`description`**: _(Optional `string`)_
 
   A description of the team.
   Default is `""`.
 
-- **`privacy`**: *(Optional `string`)*
+- **`privacy`**: _(Optional `string`)_
 
   The level of privacy for the team. Must be one of `secret` or `closed`.
   Default is `"secret"`.
 
-- **`parent_team_id`**: *(Optional `number`)*
+- **`parent_team_id`**: _(Optional `number`)_
 
   The ID of the parent team, if this is a nested team.
   Default is to create a root team without a parent.
 
-- **`ldap_dn`**: *(Optional `string`)*
+- **`ldap_dn`**: _(Optional `string`)_
 
   The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise.
   Default is `null`.
@@ -207,7 +207,6 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 
 [homepage]: https://mineiros.io/?ref=terraform-github-team
 [hello@mineiros.io]: mailto:hello@mineiros.io
-
 [badge-build]: https://github.com/mineiros-io/terraform-github-team/workflows/CI/CD%20Pipeline/badge.svg
 [badge-semver]: https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver
 [badge-license]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg
@@ -215,23 +214,19 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [badge-slack]: https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack
 [build-status]: https://github.com/mineiros-io/terraform-github-team/actions
 [releases-github]: https://github.com/mineiros-io/terraform-github-team/releases
-
 [releases-terraform]: https://github.com/hashicorp/terraform/releases
-
-[badge-tf-gh]: https://img.shields.io/badge/GH-3%20and%202.4+-F8991D.svg?logo=terraform
+[badge-tf-gh]: https://img.shields.io/badge/GH-4%20|%203%20|%202.4+-F8991D.svg?logo=terraform
 [releases-github-provider]: https://github.com/terraform-providers/terraform-provider-github/releases
-
 [apache20]: https://opensource.org/licenses/Apache-2.0
 [slack]: https://join.slack.com/t/mineiros-community/shared_invite/zt-ehidestg-aLGoIENLVs6tvwJ11w9WGg
-[Terraform]: https://www.terraform.io
-[AWS]: https://aws.amazon.com/
-[Semantic Versioning (SemVer)]: https://semver.org/
-
+[terraform]: https://www.terraform.io
+[aws]: https://aws.amazon.com/
+[semantic versioning (semver)]: https://semver.org/
 [variables.tf]: https://github.com/mineiros-io/terraform-github-team/blob/master/variables.tf
 [examples/]: https://github.com/mineiros-io/terraform-github-team/tree/master/examples
-[Issues]: https://github.com/mineiros-io/terraform-github-team/issues
-[LICENSE]: https://github.com/mineiros-io/terraform-github-team/blob/master/LICENSE
-[Makefile]: https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile
-[Pull Requests]: https://github.com/mineiros-io/terraform-github-team/pulls
-[Contribution Guidelines]: https://github.com/mineiros-io/terraform-github-team/blob/master/CONTRIBUTING.md
-[Github teams]: https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/organizing-members-into-teams
+[issues]: https://github.com/mineiros-io/terraform-github-team/issues
+[license]: https://github.com/mineiros-io/terraform-github-team/blob/master/LICENSE
+[makefile]: https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile
+[pull requests]: https://github.com/mineiros-io/terraform-github-team/pulls
+[contribution guidelines]: https://github.com/mineiros-io/terraform-github-team/blob/master/CONTRIBUTING.md
+[github teams]: https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/organizing-members-into-teams
