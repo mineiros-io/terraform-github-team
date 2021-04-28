@@ -36,9 +36,9 @@ resource "github_team_membership" "team_membership" {
 }
 
 locals {
-  repo_admin = { for i in var.admin_repositories : lower(i) => "admin" }
-  repo_push  = { for i in var.push_repositories : lower(i) => "push" }
-  repo_pull  = { for i in var.pull_repositories : lower(i) => "pull" }
+  repo_admin = { for i in var.admin_repositories : lower(i) => { permission = "admin", repository = i } }
+  repo_push  = { for i in var.push_repositories : lower(i) => { permission = "push", repository = i } }
+  repo_pull  = { for i in var.pull_repositories : lower(i) => { permission = "pull", repository = i } }
 
   repositories = merge(local.repo_admin, local.repo_push, local.repo_pull)
 }
@@ -46,9 +46,9 @@ locals {
 resource "github_team_repository" "team_repository" {
   for_each = local.repositories
 
-  repository = each.key
+  repository = each.value.repository
   team_id    = github_team.team.id
-  permission = each.value
+  permission = each.value.permission
 
   depends_on = [var.module_depends_on]
 }
