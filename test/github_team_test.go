@@ -28,7 +28,7 @@ func TestGithubTeam(t *testing.T) {
 	t.Parallel()
 
 	repositoryA := fmt.Sprintf("a-repository-%s", random.UniqueId())
-	repositoryB := fmt.Sprintf("b-repository-%s", random.UniqueId())
+	repositoryB := fmt.Sprintf("B-Repository-%s", random.UniqueId())
 	teamName := fmt.Sprintf("team-%s", random.UniqueId())
 
 	terraformOptions := &terraform.Options{
@@ -46,5 +46,6 @@ func TestGithubTeam(t *testing.T) {
 	defer terraform.Destroy(t, terraformOptions)
 
 	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
-	terraform.InitAndApply(t, terraformOptions)
+	terraform.InitAndPlan(t, terraformOptions)
+	terraform.ApplyAndIdempotent(t, terraformOptions)
 }
