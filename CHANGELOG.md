@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0]
+
+### Added
+
+- Add support for Github Provider v0.4.x
+
 ## [0.3.1]
 
 ### Changed
@@ -84,11 +90,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.3.1...HEAD
-[0.3.1]: https://github.com/mineiros-io/terraform-github-team/compare/v0.3.0...v0.3.1
+[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.3.1...v0.4.0
 
 <!-- markdown-link-check-enable -->
 
+[0.3.1]: https://github.com/mineiros-io/terraform-github-team/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.1.3...v0.2.0
 [0.1.3]: https://github.com/mineiros-io/terraform-github-team/compare/v0.1.2...v0.1.3
