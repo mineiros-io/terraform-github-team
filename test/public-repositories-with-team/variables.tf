@@ -49,7 +49,7 @@ variable "members" {
   description = "A set of users that should be added to the team as members."
   type        = set(string)
   default = [
-    "terraform-test-user-1"
+    "terraform-test-USER-1"
   ]
 }
 
