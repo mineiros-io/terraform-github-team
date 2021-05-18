@@ -10,7 +10,7 @@
 
 A [Terraform] module that offers a more convenient and tested way to provision and manage [GitHub teams].
 
-**_This module supports Terraform v0.13 as well as v0.12.9 and above
+**_This module supports Terraform v0.15, v0.14, v0.13 as well as v0.12.9 and above
 and is compatible with the Terraform Github Provider v4, v3 as well as v2.4 and above._**
 
 - [Features](#features)
@@ -47,7 +47,7 @@ This module supports the following resources:
 ```hcl
 module "team" {
   source  = "mineiros-io/team/github"
-  version = "~> 0.4.0"
+  version = "~> 0.5.0"
 
   name        = "DevOps"
   description = "The DevOps Team"
@@ -210,7 +210,7 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [badge-build]: https://github.com/mineiros-io/terraform-github-team/workflows/CI/CD%20Pipeline/badge.svg
 [badge-semver]: https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver
 [badge-license]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg
-[badge-terraform]: https://img.shields.io/badge/terraform-0.14%20|%200.13%20|%200.12.20+-623CE4.svg?logo=terraform
+[badge-terraform]: https://img.shields.io/badge/terraform-0.15%20|0.14%20|%200.13%20|%200.12.20+-623CE4.svg?logo=terraform
 [badge-slack]: https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack
 [build-status]: https://github.com/mineiros-io/terraform-github-team/actions
 [releases-github]: https://github.com/mineiros-io/terraform-github-team/releases
