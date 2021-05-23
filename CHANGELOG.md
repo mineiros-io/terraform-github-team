@@ -11,12 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- feat: add support for Terraform `v0.15`
-
-### Changed
-
-- feat: upgrade pre-commit hooks to `v0.2.3`
-- build: upgrade build-tools hooks to `v0.11.0`
+- Add support for Terraform `v0.15`
 
 ### Fixed
 
@@ -26,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add support for Github Provider v0.4.x
+- Add support for Github Provider `v4`
 
 ## [0.3.1]
 
@@ -42,16 +37,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add support for Terraform v0.14.x
+- Add support for Terraform `v0.14`
 
 ## [0.2.0]
 
 ### Added
 
 - Add `CHANGELOG.md`
-- Add support for Terraform v0.13.x
-- Add support for Terraform Github Provider v3.x
-- Prepare support for Terraform v0.14.x (needs terraform v0.12.20 or above)
+- Add support for Terraform `v0.13`
+- Add support for Terraform Github Provider `v3`
+- Prepare support for Terraform `v0.14` (needs terraform `v0.12.20` or above)
 
 ### Changed
 
@@ -63,16 +58,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - New format for README.md and LICENSE.
 
-### Changed
-
-- Bump pre-commit hooks to v 0.1.4 and add new hooks.
-- Bump build-tools to v0.5.3.
-
 ## [0.1.2] - 2020-03-03
 
 ### Added
 
-- Upgrade the Github provider to version 2.4.
+- Upgrade the Github provider to version `v2.4`
 
 ## [0.1.1] - 2020-03-02
 
