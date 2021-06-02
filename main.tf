@@ -42,7 +42,7 @@ locals {
   repo_triage   = { for i in var.push_repositories : lower(i) => { permission = "triage", repository = i } }
   repo_pull     = { for i in var.pull_repositories : lower(i) => { permission = "pull", repository = i } }
 
-  repositories = merge(local.repo_admin, local.repo_admin, local.repo_push, local.repo_triage, local.repo_pull)
+  repositories = merge(local.repo_admin, local.repo_maintain, local.repo_push, local.repo_triage, local.repo_pull)
 }
 
 resource "github_team_repository" "team_repository" {
