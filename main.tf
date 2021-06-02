@@ -36,11 +36,13 @@ resource "github_team_membership" "team_membership" {
 }
 
 locals {
-  repo_admin = { for i in var.admin_repositories : lower(i) => { permission = "admin", repository = i } }
-  repo_push  = { for i in var.push_repositories : lower(i) => { permission = "push", repository = i } }
-  repo_pull  = { for i in var.pull_repositories : lower(i) => { permission = "pull", repository = i } }
+  repo_admin    = { for i in var.admin_repositories : lower(i) => { permission = "admin", repository = i } }
+  repo_maintain = { for i in var.admin_repositories : lower(i) => { permission = "maintain", repository = i } }
+  repo_push     = { for i in var.push_repositories : lower(i) => { permission = "push", repository = i } }
+  repo_triage   = { for i in var.push_repositories : lower(i) => { permission = "triage", repository = i } }
+  repo_pull     = { for i in var.pull_repositories : lower(i) => { permission = "pull", repository = i } }
 
-  repositories = merge(local.repo_admin, local.repo_push, local.repo_pull)
+  repositories = merge(local.repo_admin, local.repo_admin, local.repo_push, local.repo_triage, local.repo_pull)
 }
 
 resource "github_team_repository" "team_repository" {

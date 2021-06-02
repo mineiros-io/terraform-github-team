@@ -94,9 +94,24 @@ See [variables.tf] and [examples/] for details and use-cases.
 
   The name of the team.
 
+- **`admin_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get admin (full) permission to.
+  Default is `[]`.
+
+- **`maintain_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get admin (maintain) permission to.
+  Default is `[]`.
+
 - **`push_repositories`**: _(Optional `set(string)`)_
 
   A list of repository names the current team should get push (read-write) permission to.
+  Default is `[]`.
+
+- **`triage_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get push (triage) permission to.
   Default is `[]`.
 
 - **`pull_repositories`**: _(Optional `set(string)`)_
@@ -112,11 +127,6 @@ See [variables.tf] and [examples/] for details and use-cases.
 - **`members`**: _(Optional `set(string)`)_
 
   A list of users that will be added to the current team with member permissions.
-  Default is `[]`.
-
-- **`admin_repositories`**: _(Optional `set(string)`)_
-
-  A list of repository names the current team should get admin (full) permission to.
   Default is `[]`.
 
 - **`description`**: _(Optional `string`)_

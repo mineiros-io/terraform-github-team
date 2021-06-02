@@ -63,8 +63,20 @@ variable "admin_repositories" {
   default     = []
 }
 
+variable "maintain_repositories" {
+  description = "(Optional) A list of repository names the current team should get push (maintain) permission to."
+  type        = set(string)
+  default     = []
+}
+
 variable "push_repositories" {
   description = "(Optional) A list of repository names the current team should get push (read-write) permission to."
+  type        = set(string)
+  default     = []
+}
+
+variable "triage_repositories" {
+  description = "(Optional) A list of repository names the current team should get push (triage) permission to."
   type        = set(string)
   default     = []
 }
