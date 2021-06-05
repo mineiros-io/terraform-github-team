@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.2]
+
+### Fixed
+
+- Fix the bug where `repo_maintain` uses `repo_admin` to set maintain
+  permissions and `repo_triage` uses `repo_push` to set triage permissions
+
 ## [0.5.1]
 
 ### Added
@@ -101,11 +108,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.1...HEAD
-[0.5.1]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.0...v0.5.1
+[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.2...HEAD
+[0.5.2]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.1...v0.5.2
 
 <!-- markdown-link-check-enable -->
 
+[0.5.1]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/mineiros-io/terraform-github-team/compare/v0.3.0...v0.3.1
