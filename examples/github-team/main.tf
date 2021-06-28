@@ -39,7 +39,7 @@ resource "github_repository" "another_repository" {
 
 module "team" {
   source  = "mineiros-io/team/github"
-  version = "~> 0.5.0"
+  version = "~> 0.6.0"
 
   name        = "Engineering"
   description = "This team is created with terraform to test the terraformn-github-repository module."
@@ -59,7 +59,7 @@ module "team" {
 
 module "child_team" {
   source  = "mineiros-io/team/github"
-  version = "~> 0.5.0"
+  version = "~> 0.6.0"
 
   name           = "DevOps"
   parent_team_id = module.team.id
