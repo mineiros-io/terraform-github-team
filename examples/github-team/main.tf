@@ -25,10 +25,6 @@
 # Provider Setup
 # ----------------------------------------------------------------------------------------------------------------------
 
-provider "aws" {
-  region = "eu-west-1"
-}
-
 resource "github_repository" "repository" {
   name = "engineering-tools"
 }
