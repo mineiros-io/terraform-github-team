@@ -10,8 +10,9 @@
 
 A [Terraform] module that offers a more convenient and tested way to provision and manage [GitHub teams].
 
-**_This module supports Terraform v1, v0.15, v0.14, v0.13 as well as v0.12.9 and above
-and is compatible with the Terraform Github Provider v4, v3 as well as v2.4 and above._**
+**_This module supports Terraform v1.x and is compatible with the Official Terraform GitHub Provider v4.x from `integrations/github`._**
+
+**Attention: This module is incompatible with the Hashicorp GitHub Provider! The latest version of this module supporting `hashicorp/github` provider is `~> 0.6.0`**
 
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -66,6 +67,19 @@ module "team" {
 
 resource "github_repository" "repository" {
   name   = "a-repository"
+}
+
+provider "github" {}
+
+terraform {
+  required_version = "~> 1.0"
+
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
+  }
 }
 ```
 
@@ -208,7 +222,7 @@ Run `make help` to see details on each available target.
 This module is licensed under the Apache License Version 2.0, January 2004.
 Please see [LICENSE] for full details.
 
-Copyright &copy; 2020 [Mineiros GmbH][homepage]
+Copyright &copy; 2021 [Mineiros GmbH][homepage]
 
 <!-- References -->
 
@@ -217,12 +231,12 @@ Copyright &copy; 2020 [Mineiros GmbH][homepage]
 [badge-build]: https://github.com/mineiros-io/terraform-github-team/workflows/CI/CD%20Pipeline/badge.svg
 [badge-semver]: https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver
 [badge-license]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg
-[badge-terraform]: https://img.shields.io/badge/terraform-1.x%20|0.15%20|0.14%20|%200.13%20|%200.12.20+-623CE4.svg?logo=terraform
+[badge-terraform]: https://img.shields.io/badge/terraform-1.x-623CE4.svg?logo=terraform
 [badge-slack]: https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack
 [build-status]: https://github.com/mineiros-io/terraform-github-team/actions
 [releases-github]: https://github.com/mineiros-io/terraform-github-team/releases
 [releases-terraform]: https://github.com/hashicorp/terraform/releases
-[badge-tf-gh]: https://img.shields.io/badge/GH-4%20|%203%20|%202.4+-F8991D.svg?logo=terraform
+[badge-tf-gh]: https://img.shields.io/badge/GH-4.x-F8991D.svg?logo=terraform
 [releases-github-provider]: https://github.com/terraform-providers/terraform-provider-github/releases
 [apache20]: https://opensource.org/licenses/Apache-2.0
 [slack]: https://join.slack.com/t/mineiros-community/shared_invite/zt-ehidestg-aLGoIENLVs6tvwJ11w9WGg

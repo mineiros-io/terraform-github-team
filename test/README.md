@@ -48,14 +48,14 @@ Alternatively, you can also run the tests without Docker.
 ### Run the tests with Docker
 
 1. Install [Docker]
-2. Set your Git credentials as environment variables: `GITHUB_TOKEN`, `GITHUB_ORGANIZATION`
+2. Set your Git credentials as environment variables: `GITHUB_TOKEN`, `GITHUB_OWNER`
 3. Run `make docker-run-tests`
 
 ### Run the tests without Docker
 
 1. Install the latest version of [Go].
 2. Install [Terraform].
-3. Set your Git credentials as environment variables: `GITHUB_TOKEN`, `GITHUB_ORGANIZATION`
+3. Set your Git credentials as environment variables: `GITHUB_TOKEN`, `GITHUB_OWNER`
 4. Install go dependencies: `go mod download`
 5. Run all tests: `go test -v -count 1 -timeout 45m -parallel 128 ./test/...`
 6. Run a specific test: `go test -count 1 -v -timeout 45m -parallel 128 test/example_test.go`
