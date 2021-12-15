@@ -243,11 +243,11 @@ Copyright &copy; 2021 [Mineiros GmbH][homepage]
 [terraform]: https://www.terraform.io
 [aws]: https://aws.amazon.com/
 [semantic versioning (semver)]: https://semver.org/
-[variables.tf]: https://github.com/mineiros-io/terraform-github-team/blob/master/variables.tf
-[examples/]: https://github.com/mineiros-io/terraform-github-team/tree/master/examples
+[variables.tf]: https://github.com/mineiros-io/terraform-github-team/blob/main/variables.tf
+[examples/]: https://github.com/mineiros-io/terraform-github-team/tree/main/examples
 [issues]: https://github.com/mineiros-io/terraform-github-team/issues
-[license]: https://github.com/mineiros-io/terraform-github-team/blob/master/LICENSE
-[makefile]: https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile
+[license]: https://github.com/mineiros-io/terraform-github-team/blob/main/LICENSE
+[makefile]: https://github.com/mineiros-io/terraform-github-team/blob/main/Makefile
 [pull requests]: https://github.com/mineiros-io/terraform-github-team/pulls
-[contribution guidelines]: https://github.com/mineiros-io/terraform-github-team/blob/master/CONTRIBUTING.md
+[contribution guidelines]: https://github.com/mineiros-io/terraform-github-team/blob/main/CONTRIBUTING.md
 [github teams]: https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/organizing-members-into-teams

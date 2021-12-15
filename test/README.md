@@ -62,8 +62,8 @@ Alternatively, you can also run the tests without Docker.
 
 <!-- References -->
 
-[Makefile]: https://github.com/mineiros-io/terraform-github-team/blob/master/Makefile
-[Testdirectory]: https://github.com/mineiros-io/terraform-github-team/tree/master/test
+[Makefile]: https://github.com/mineiros-io/terraform-github-team/blob/main/Makefile
+[Testdirectory]: https://github.com/mineiros-io/terraform-github-team/tree/main/test
 
 [homepage]: https://mineiros.io/?ref=terraform-github-team
 [Terratest]: https://github.com/gruntwork-io/terratest
