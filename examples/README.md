@@ -12,7 +12,7 @@
 <!-- References -->
 
 <!-- markdown-link-check-disable -->
-[github-team/]: https://github.com/mineiros-io/terraform-github-team/blob/master/examples/github-team
+[github-team/]: https://github.com/mineiros-io/terraform-github-team/blob/main/examples/github-team
 <!-- markdown-link-check-enable -->
 
 [homepage]: https://mineiros.io/?ref=terraform-github-team

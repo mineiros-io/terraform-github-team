@@ -79,7 +79,7 @@ the principles of [Semantic Versioning (SemVer)].
 <!-- References -->
 
 [Pull Requests]: https://github.com/mineiros-io/terraform-github-team/pulls
-[pre-commit-file]: https://github.com/mineiros-io/terraform-github-team/blob/master/.pre-commit-config.yaml
+[pre-commit-file]: https://github.com/mineiros-io/terraform-github-team/blob/main/.pre-commit-config.yaml
 
 [Github Flow]: https://guides.github.com/introduction/flow/
 [CODEOWNERS]: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
