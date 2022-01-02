@@ -160,13 +160,33 @@ See [variables.tf] and [examples/] for details and use-cases.
   The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise.
   Default is `null`.
 
-## Module Attributes Reference
+## Module Outputs
 
-The following attributes are exported by the module:
+The following attributes are exported in the outputs of the module:
 
-- **`module_depends_on`**
+- **`id`**
 
-  A list of external resources the module depends_on.
+  The ID of the team.
+
+- **`name`**
+
+  The name of the team.
+
+- **`slug`**
+
+  The Slug of the team.
+
+- **`team`**
+
+  The full team object.
+
+- **`team_memberships`**
+
+  A list of all team memberships.
+
+- **`team_repositories`**
+
+  A list of all team repositories.
 
 ## External Documentation
 
