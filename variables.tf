@@ -49,6 +49,12 @@ variable "members" {
   default     = []
 }
 
+variable "create_default_maintainer" {
+  type        = string
+  description = "(Optional) Adds the creating user to the team when set to `true`."
+  default     = false
+}
+
 variable "admin_repositories" {
   description = "(Optional) A list of repository names the current team should get admin (full) permission to."
   type        = set(string)

@@ -17,6 +17,8 @@ resource "github_team" "team" {
   parent_team_id = var.parent_team_id
   ldap_dn        = var.ldap_dn
 
+  create_default_maintainer = var.create_default_maintainer
+
   depends_on = [var.module_depends_on]
 }
 

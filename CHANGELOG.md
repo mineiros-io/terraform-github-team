@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - BREAKING CHANGE: Add support for `module_enabled`
 - BREAKING CHANGE: Drop support for broken terraform `1.1.0` and `1.1.1` which might corrupt terraform state.
 - BREAKING CHANGE: Drop inputs from outpus
+- Add support for default maintainer
 
 ## [0.7.0]
 
