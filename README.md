@@ -93,12 +93,6 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 ### Top-level Arguments
 
-#### Module Configuration
-
-- **`module_depends_on`**: _(Optional `list(any)`)_
-
-  A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
-
 #### Main Resource Configuration
 
 - **`name`**: **(Required `string`)**
@@ -159,6 +153,18 @@ See [variables.tf] and [examples/] for details and use-cases.
 
   The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise.
   Default is `null`.
+
+#### Module Configuration
+
+- **`module_depends_on`**: _(Optional `list(any)`)_
+
+  A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
+
+- [**`module_enabled`**](#var-module_enabled): *(Optional `bool`)*<a name="var-module_enabled"></a>
+
+  Specifies whether resources in the module will be created.
+
+  Default is `true`.
 
 ## Module Outputs
 

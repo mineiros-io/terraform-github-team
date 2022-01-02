@@ -85,6 +85,13 @@ variable "pull_repositories" {
 # See https://medium.com/mineiros/the-ultimate-guide-on-how-to-write-terraform-modules-part-1-81f86d31f024
 # ------------------------------------------------------------------------------
 
+
+variable "module_enabled" {
+  type        = bool
+  description = "(Optional) Whether or not to create resources within the module."
+  default     = true
+}
+
 variable "module_depends_on" {
   type        = any
   description = "(Optional) A list of external resources the module depends_on. Default is []."

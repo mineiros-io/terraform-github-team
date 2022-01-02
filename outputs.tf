@@ -4,17 +4,17 @@
 
 output "id" {
   description = "The ID of the team."
-  value       = github_team.team.id
+  value       = try(github_team.team[0].id, null)
 }
 
-output "team_name" {
+output "name" {
   description = "The name of the team."
-  value       = github_team.team.name
+  value       = try(github_team.team[0].name, null)
 }
 
 output "slug" {
   description = "The Slug of the team."
-  value       = github_team.team.slug
+  value       = try(github_team.team[0].slug, null)
 }
 
 # ------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ output "slug" {
 
 output "team" {
   description = "The full team object."
-  value       = github_team.team
+  value       = one(github_team.team)
 }
 
 output "team_memberships" {
