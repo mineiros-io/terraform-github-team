@@ -22,7 +22,7 @@ resource "github_team" "team" {
 
 locals {
   maintainers = { for i in var.maintainers : lower(i) => { role = "maintainer", username = i } }
-  members     = { for i in var.members : lower(i) => { role = "member", username = i } }
+  members     = { for i in setsubtract(var.members, var.maintainers) : lower(i) => { role = "member", username = i } }
 
   memberships = merge(local.maintainers, local.members)
 }
