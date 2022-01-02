@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0]
+
+- Automatically remove maintainers from members to resolve conflicts on the fly
+- BREAKING CHANGE: Add support for `module_enabled`
+- BREAKING CHANGE: Drop support for broken terraform `1.1.0` and `1.1.1` which might corrupt terraform state.
+- BREAKING CHANGE: Drop inputs from outpus
+
 ## [0.7.0]
 
 ### BREAKING CHANGES
@@ -160,11 +167,12 @@ After you've migrated the state, please run
 
 <!-- markdown-link-check-disable -->
 
-[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.7.0...HEAD
-[0.7.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.6.0...v0.7.0
+[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.7.0...v0.8.0
 
 <!-- markdown-link-check-enable -->
 
+[0.7.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.2...v0.6.0
 [0.5.2]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.1...v0.5.2
 [0.5.1]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.0...v0.5.1
