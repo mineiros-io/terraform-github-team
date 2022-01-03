@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.8.0]
 
+### Added
+
+
 - Automatically remove maintainers from members to resolve conflicts on the fly
 - BREAKING CHANGE: Add support for `module_enabled`
 - BREAKING CHANGE: Drop support for broken terraform `1.1.0` and `1.1.1` which might corrupt terraform state.
