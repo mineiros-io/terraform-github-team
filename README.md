@@ -93,80 +93,127 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 ### Top-level Arguments
 
-#### Module Configuration
-
-- **`module_depends_on`**: _(Optional `list(any)`)_
-
-  A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
-
 #### Main Resource Configuration
 
 - **`name`**: **(Required `string`)**
 
   The name of the team.
 
-- **`admin_repositories`**: _(Optional `set(string)`)_
-
-  A list of repository names the current team should get admin (full) permission to.
-  Default is `[]`.
-
-- **`maintain_repositories`**: _(Optional `set(string)`)_
-
-  A list of repository names the current team should get admin (maintain) permission to.
-  Default is `[]`.
-
-- **`push_repositories`**: _(Optional `set(string)`)_
-
-  A list of repository names the current team should get push (read-write) permission to.
-  Default is `[]`.
-
-- **`triage_repositories`**: _(Optional `set(string)`)_
-
-  A list of repository names the current team should get push (triage) permission to.
-  Default is `[]`.
-
-- **`pull_repositories`**: _(Optional `set(string)`)_
-
-  A list of repository names the current team should get pull (read-only) permission to.
-  Default is `[]`.
-
-- **`maintainers`**: _(Optional `set(string)`)_
-
-  A list of users that will be added to the current team with maintainer permissions.
-  Default is `[]`.
-
-- **`members`**: _(Optional `set(string)`)_
-
-  A list of users that will be added to the current team with member permissions.
-  Default is `[]`.
-
 - **`description`**: _(Optional `string`)_
 
   A description of the team.
+
   Default is `""`.
 
 - **`privacy`**: _(Optional `string`)_
 
   The level of privacy for the team. Must be one of `secret` or `closed`.
+
   Default is `"secret"`.
 
 - **`parent_team_id`**: _(Optional `number`)_
 
   The ID of the parent team, if this is a nested team.
+
   Default is to create a root team without a parent.
 
 - **`ldap_dn`**: _(Optional `string`)_
 
   The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise.
-  Default is `null`.
 
-## Module Attributes Reference
+- **`create_default_maintainer`**: _(Optional `bool`)_
 
-The following attributes are exported by the module:
+  Adds the creating user to the team when set to `true`."
 
-- **`module_depends_on`**
+  Default is `false`.
 
-  A list of external resources the module depends_on.
+#### Extended Resource Configuration
+
+##### Team membership
+
+- **`maintainers`**: _(Optional `set(string)`)_
+
+  A list of users that will be added to the current team with maintainer permissions.
+
+  Default is `[]`.
+
+- **`members`**: _(Optional `set(string)`)_
+
+  A list of users that will be added to the current team with member permissions.
+
+  Default is `[]`.
+
+##### Team repository access
+
+- **`admin_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get admin (full) permission to.
+
+  Default is `[]`.
+
+- **`maintain_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get admin (maintain) permission to.
+
+  Default is `[]`.
+
+- **`push_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get push (read-write) permission to.
+
+  Default is `[]`.
+
+- **`triage_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get push (triage) permission to.
+
+  Default is `[]`.
+
+- **`pull_repositories`**: _(Optional `set(string)`)_
+
+  A list of repository names the current team should get pull (read-only) permission to.
+
+  Default is `[]`.
+
+#### Module Configuration
+
+- **`module_depends_on`**: _(Optional `list(any)`)_
+
+  A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
+
+- [**`module_enabled`**](#var-module_enabled): *(Optional `bool`)*<a name="var-module_enabled"></a>
+
+  Specifies whether resources in the module will be created.
+
+  Default is `true`.
+
+## Module Outputs
+
+The following attributes are exported in the outputs of the module:
+
+- **`id`**
+
+  The ID of the team.
+
+- **`name`**
+
+  The name of the team.
+
+- **`slug`**
+
+  The Slug of the team.
+
+- **`team`**
+
+  The full team object.
+
+- **`team_memberships`**
+
+  A list of all team memberships.
+
+- **`team_repositories`**
+
+  A list of all team repositories.
 
 ## External Documentation
 

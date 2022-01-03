@@ -49,6 +49,12 @@ variable "members" {
   default     = []
 }
 
+variable "create_default_maintainer" {
+  type        = string
+  description = "(Optional) Adds the creating user to the team when set to `true`."
+  default     = false
+}
+
 variable "admin_repositories" {
   description = "(Optional) A list of repository names the current team should get admin (full) permission to."
   type        = set(string)
@@ -84,6 +90,13 @@ variable "pull_repositories" {
 # These variables are used to configure the module.
 # See https://medium.com/mineiros/the-ultimate-guide-on-how-to-write-terraform-modules-part-1-81f86d31f024
 # ------------------------------------------------------------------------------
+
+
+variable "module_enabled" {
+  type        = bool
+  description = "(Optional) Whether or not to create resources within the module."
+  default     = true
+}
 
 variable "module_depends_on" {
   type        = any

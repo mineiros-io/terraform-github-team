@@ -19,7 +19,7 @@ and push permissions to the other.
 ```hcl
 module "team" {
   source  = "mineiros-io/team/github"
-  version = "~> 0.7.0"
+  version = "~> 0.8.0"
 
   name        = "Engineering"
   description = "This team is created with terraform to test the terraformn-github-repository module."
@@ -39,7 +39,7 @@ module "team" {
 
 module "child_team" {
   source  = "mineiros-io/team/github"
-  version = "~> 0.7.0"
+  version = "~> 0.8.0"
 
   name           = "DevOps"
   parent_team_id = module.team.id

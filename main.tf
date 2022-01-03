@@ -9,26 +9,30 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "github_team" "team" {
+  count = var.module_enabled ? 1 : 0
+
   name           = var.name
   description    = var.description
   privacy        = var.privacy
   parent_team_id = var.parent_team_id
   ldap_dn        = var.ldap_dn
 
+  create_default_maintainer = var.create_default_maintainer
+
   depends_on = [var.module_depends_on]
 }
 
 locals {
   maintainers = { for i in var.maintainers : lower(i) => { role = "maintainer", username = i } }
-  members     = { for i in var.members : lower(i) => { role = "member", username = i } }
+  members     = { for i in setsubtract(var.members, var.maintainers) : lower(i) => { role = "member", username = i } }
 
   memberships = merge(local.maintainers, local.members)
 }
 
 resource "github_team_membership" "team_membership" {
-  for_each = local.memberships
+  for_each = var.module_enabled ? local.memberships : {}
 
-  team_id  = github_team.team.id
+  team_id  = try(github_team.team[0].id, null)
   username = each.value.username
   role     = each.value.role
 
@@ -46,10 +50,10 @@ locals {
 }
 
 resource "github_team_repository" "team_repository" {
-  for_each = local.repositories
+  for_each = var.module_enabled ? local.repositories : {}
 
   repository = each.value.repository
-  team_id    = github_team.team.id
+  team_id    = try(github_team.team[0].id, null)
   permission = each.value.permission
 
   depends_on = [var.module_depends_on]
