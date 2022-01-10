@@ -1,10 +1,10 @@
-[<img src="https://raw.githubusercontent.com/mineiros-io/brand/3bffd30e8bdbbde32c143e2650b2faa55f1df3ea/mineiros-primary-logo.svg" width="400"/>][homepage]
+[<img src="https://raw.githubusercontent.com/mineiros-io/brand/3bffd30e8bdbbde32c143e2650b2faa55f1df3ea/mineiros-primary-logo.svg" width="400"/>](https://mineiros.io/?ref=terraform-github-team)
 
-[![Build Status][badge-build]][build-status]
-[![GitHub tag (latest SemVer)][badge-semver]][releases-github]
-[![Terraform Version][badge-terraform]][releases-terraform]
-[![Github Provider Version][badge-tf-gh]][releases-github-provider]
-[![Join Slack][badge-slack]][slack]
+[![Build Status](https://github.com/mineiros-io/terraform-github-team/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/mineiros-io/terraform-github-team/actions)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver)](https://github.com/mineiros-io/terraform-github-team/releases)
+[![Terraform Version](https://img.shields.io/badge/terraform-1.x-623CE4.svg?logo=terraform)](https://github.com/hashicorp/terraform/releases)
+[![Github Provider Version](https://img.shields.io/badge/GH-4.x-F8991D.svg?logo=terraform)](https://github.com/terraform-providers/terraform-provider-github/releases)
+[![Join Slack](https://img.shields.io/badge/slack-@mineiros--community-f32752.svg?logo=slack)](https://mineiros.io/slack)
 
 # terraform-github-team
 
@@ -14,15 +14,18 @@ A [Terraform] module that offers a more convenient and tested way to provision a
 
 **Attention: This module is incompatible with the Hashicorp GitHub Provider! The latest version of this module supporting `hashicorp/github` provider is `~> 0.6.0`**
 
-- [Features](#features)
+
+- [Module Features](#module-features)
 - [Getting Started](#getting-started)
-- [Examples](#examples)
 - [Module Argument Reference](#module-argument-reference)
-  - [Top-level Arguments](#top-level-arguments)
-    - [Module Configuration](#module-configuration)
-    - [Main Resource Configuration](#main-resource-configuration)
-- [Module Attributes Reference](#module-attributes-reference)
+  - [Main Resource Configuration](#main-resource-configuration)
+  - [Extended Resource Configuration](#extended-resource-configuration)
+    - [Team membership](#team-membership)
+    - [Team repository access](#team-repository-access)
+  - [Module Configuration](#module-configuration)
+- [Module Outputs](#module-outputs)
 - [External Documentation](#external-documentation)
+  - [GitHub Provider Documentation](#github-provider-documentation)
 - [Module Versioning](#module-versioning)
   - [Backwards compatibility in `0.0.z` and `0.y.z` version](#backwards-compatibility-in-00z-and-0yz-version)
 - [About Mineiros](#about-mineiros)
@@ -31,7 +34,7 @@ A [Terraform] module that offers a more convenient and tested way to provision a
 - [Makefile Targets](#makefile-targets)
 - [License](#license)
 
-## Features
+## Module Features
 
 This module supports the following resources:
 
@@ -83,103 +86,99 @@ terraform {
 }
 ```
 
-## Examples
-
-For a complete example please see [examples/] directory.
-
 ## Module Argument Reference
 
 See [variables.tf] and [examples/] for details and use-cases.
 
-### Top-level Arguments
+### Main Resource Configuration
 
-#### Main Resource Configuration
-
-- **`name`**: **(Required `string`)**
+- [**`name`**](#var-name): *(**Required** `string`)*<a name="var-name"></a>
 
   The name of the team.
 
-- **`description`**: _(Optional `string`)_
+- [**`description`**](#var-description): *(Optional `string`)*<a name="var-description"></a>
 
   A description of the team.
 
   Default is `""`.
 
-- **`privacy`**: _(Optional `string`)_
+- [**`privacy`**](#var-privacy): *(Optional `string`)*<a name="var-privacy"></a>
 
   The level of privacy for the team. Must be one of `secret` or `closed`.
 
   Default is `"secret"`.
 
-- **`parent_team_id`**: _(Optional `number`)_
+- [**`parent_team_id`**](#var-parent_team_id): *(Optional `number`)*<a name="var-parent_team_id"></a>
 
   The ID of the parent team, if this is a nested team.
-
+  
   Default is to create a root team without a parent.
 
-- **`ldap_dn`**: _(Optional `string`)_
+- [**`ldap_dn`**](#var-ldap_dn): *(Optional `string`)*<a name="var-ldap_dn"></a>
 
   The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise.
 
-- **`create_default_maintainer`**: _(Optional `bool`)_
+- [**`create_default_maintainer`**](#var-create_default_maintainer): *(Optional `bool`)*<a name="var-create_default_maintainer"></a>
 
   Adds the creating user to the team when set to `true`."
 
   Default is `false`.
 
-#### Extended Resource Configuration
+### Extended Resource Configuration
 
-##### Team membership
+#### Team membership
 
-- **`maintainers`**: _(Optional `set(string)`)_
+- [**`maintainers`**](#var-maintainers): *(Optional `set(string)`)*<a name="var-maintainers"></a>
 
   A list of users that will be added to the current team with maintainer permissions.
 
   Default is `[]`.
 
-- **`members`**: _(Optional `set(string)`)_
+- [**`members`**](#var-members): *(Optional `set(string)`)*<a name="var-members"></a>
 
   A list of users that will be added to the current team with member permissions.
 
   Default is `[]`.
 
-##### Team repository access
+#### Team repository access
 
-- **`admin_repositories`**: _(Optional `set(string)`)_
+- [**`admin_repositories`**](#var-admin_repositories): *(Optional `set(string)`)*<a name="var-admin_repositories"></a>
 
   A list of repository names the current team should get admin (full) permission to.
 
   Default is `[]`.
 
-- **`maintain_repositories`**: _(Optional `set(string)`)_
+- [**`maintain_repositories`**](#var-maintain_repositories): *(Optional `set(string)`)*<a name="var-maintain_repositories"></a>
 
   A list of repository names the current team should get admin (maintain) permission to.
 
   Default is `[]`.
 
-- **`push_repositories`**: _(Optional `set(string)`)_
+- [**`push_repositories`**](#var-push_repositories): *(Optional `set(string)`)*<a name="var-push_repositories"></a>
 
   A list of repository names the current team should get push (read-write) permission to.
 
   Default is `[]`.
 
-- **`triage_repositories`**: _(Optional `set(string)`)_
+- [**`triage_repositories`**](#var-triage_repositories): *(Optional `set(string)`)*<a name="var-triage_repositories"></a>
 
   A list of repository names the current team should get push (triage) permission to.
 
   Default is `[]`.
 
-- **`pull_repositories`**: _(Optional `set(string)`)_
+- [**`pull_repositories`**](#var-pull_repositories): *(Optional `set(string)`)*<a name="var-pull_repositories"></a>
 
   A list of repository names the current team should get pull (read-only) permission to.
 
   Default is `[]`.
 
-#### Module Configuration
+### Module Configuration
 
-- **`module_depends_on`**: _(Optional `list(any)`)_
+- [**`module_depends_on`**](#var-module_depends_on): *(Optional `list(any)`)*<a name="var-module_depends_on"></a>
 
   A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
+
+  Default is `[]`.
 
 - [**`module_enabled`**](#var-module_enabled): *(Optional `bool`)*<a name="var-module_enabled"></a>
 
@@ -217,8 +216,9 @@ The following attributes are exported in the outputs of the module:
 
 ## External Documentation
 
-- GitHub Provider Documentation
-  - https://www.terraform.io/docs/providers/github/index.html
+### GitHub Provider Documentation
+
+- https://registry.terraform.io/providers/integrations/github/latest/docs
 
 ## Module Versioning
 
@@ -237,16 +237,15 @@ Given a version number `MAJOR.MINOR.PATCH`, we increment the:
 
 ## About Mineiros
 
-Mineiros is a [DevOps as a Service][homepage] company based in Berlin, Germany.
-We offer commercial support for all of our projects and encourage you to reach out
-if you have any questions or need help. Feel free to send us an email at [hello@mineiros.io]
-or join our [Community Slack channel][slack].
+[Mineiros][homepage] is a remote-first company headquartered in Berlin, Germany
+that solves development, automation and security challenges in cloud infrastructure.
 
-We can also help you with:
+Our vision is to massively reduce time and overhead for teams to manage and
+deploy production-grade and secure cloud infrastructure.
 
-- Terraform modules for all types of infrastructure such as VPCs, Docker clusters, databases,
-  logging and monitoring, CI, etc.
-- Consulting & training on AWS, Terraform and DevOps
+We offer commercial support for all of our modules and encourage you to reach out
+if you have any questions or need help. Feel free to email us at [hello@mineiros.io] or join our
+[Community Slack channel][slack].
 
 ## Reporting Issues
 
@@ -254,7 +253,7 @@ We use GitHub [Issues] to track community reported issues and missing features.
 
 ## Contributing
 
-Contributions are encouraged and welcome! For the process of accepting changes, we use
+Contributions are always encouraged and welcome! For the process of accepting changes, we use
 [Pull Requests]. If you'd like more information, please see our [Contribution Guidelines].
 
 ## Makefile Targets
@@ -269,7 +268,8 @@ Run `make help` to see details on each available target.
 This module is licensed under the Apache License Version 2.0, January 2004.
 Please see [LICENSE] for full details.
 
-Copyright &copy; 2021 [Mineiros GmbH][homepage]
+Copyright &copy; 2020-2022 [Mineiros GmbH][homepage]
+
 
 <!-- References -->
 
