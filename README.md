@@ -48,7 +48,7 @@ This module supports the following resources:
 ```hcl
 module "team" {
   source  = "mineiros-io/team/github"
-  version = "~> 0.6.0"
+  version = "~> 0.8.0"
 
   name        = "DevOps"
   description = "The DevOps Team"
@@ -144,31 +144,31 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 - [**`admin_repositories`**](#var-admin_repositories): *(Optional `set(string)`)*<a name="var-admin_repositories"></a>
 
-  A list of repository names the current team should get admin (full) permission to.
+  A list of repository names the current team should get [admin](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
 
   Default is `[]`.
 
 - [**`maintain_repositories`**](#var-maintain_repositories): *(Optional `set(string)`)*<a name="var-maintain_repositories"></a>
 
-  A list of repository names the current team should get admin (maintain) permission to.
+  A list of repository names the current team should get [maintain](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
 
   Default is `[]`.
 
 - [**`push_repositories`**](#var-push_repositories): *(Optional `set(string)`)*<a name="var-push_repositories"></a>
 
-  A list of repository names the current team should get push (read-write) permission to.
+  A list of repository names the current team should get [push (read-write)](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
 
   Default is `[]`.
 
 - [**`triage_repositories`**](#var-triage_repositories): *(Optional `set(string)`)*<a name="var-triage_repositories"></a>
 
-  A list of repository names the current team should get push (triage) permission to.
+  A list of repository names the current team should get [push (triage)](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
 
   Default is `[]`.
 
 - [**`pull_repositories`**](#var-pull_repositories): *(Optional `set(string)`)*<a name="var-pull_repositories"></a>
 
-  A list of repository names the current team should get pull (read-only) permission to.
+  A list of repository names the current team should get [pull (read-only)](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
 
   Default is `[]`.
 
