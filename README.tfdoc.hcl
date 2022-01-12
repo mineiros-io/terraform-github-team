@@ -62,7 +62,7 @@ section {
       ```hcl
       module "team" {
         source  = "mineiros-io/team/github"
-        version = "~> 0.6.0"
+        version = "~> 0.8.0"
 
         name        = "DevOps"
         description = "The DevOps Team"
