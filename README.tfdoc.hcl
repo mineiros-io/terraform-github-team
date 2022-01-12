@@ -190,7 +190,7 @@ section {
           type        = set(string)
           default     = []
           description = <<-END
-            A list of repository names the current team should get admin (full) permission to.
+            A list of repository names the current team should get [admin](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
           END
         }
 
@@ -198,7 +198,7 @@ section {
           type        = set(string)
           default     = []
           description = <<-END
-            A list of repository names the current team should get admin (maintain) permission to.
+            A list of repository names the current team should get [maintain](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
           END
         }
 
@@ -206,7 +206,7 @@ section {
           type        = set(string)
           default     = []
           description = <<-END
-            A list of repository names the current team should get push (read-write) permission to.
+            A list of repository names the current team should get [push (read-write)](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
           END
         }
 
@@ -214,7 +214,7 @@ section {
           type        = set(string)
           default     = []
           description = <<-END
-            A list of repository names the current team should get push (triage) permission to.
+            A list of repository names the current team should get [push (triage)](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
           END
         }
 
@@ -222,7 +222,7 @@ section {
           type        = set(string)
           default     = []
           description = <<-END
-            A list of repository names the current team should get pull (read-only) permission to.
+            A list of repository names the current team should get [pull (read-only)](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-roles-for-organizations) permission to.
           END
         }
       }
