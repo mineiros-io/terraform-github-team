@@ -75,12 +75,7 @@ Run `terraform destroy` to destroy all resources again.
 
 <!-- References -->
 
-<!-- markdown-link-check-disable -->
-
 [main.tf]: https://github.com/mineiros-io/terraform-github-team/blob/main/examples/github-team/main.tf
-
-<!-- markdown-link-check-enable -->
-
 [homepage]: https://mineiros.io/?ref=terraform-github-team
 [badge-license]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg
 [badge-terraform]: https://img.shields.io/badge/terraform-1.x%20|0.15%20|0.14%20|%200.13%20|%200.12.20+-623CE4.svg?logo=terraform
