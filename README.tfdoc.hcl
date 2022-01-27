@@ -291,7 +291,7 @@ section {
     }
 
     output "team_repositories" {
-      type        = object(team_repository)
+      type        = list(team_repository)
       description = <<-END
         A list of all team repositories.
       END
