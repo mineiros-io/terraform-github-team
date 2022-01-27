@@ -210,7 +210,7 @@ The following attributes are exported in the outputs of the module:
 
   A list of all team memberships.
 
-- [**`team_repositories`**](#output-team_repositories): *(`object(team_repository)`)*<a name="output-team_repositories"></a>
+- [**`team_repositories`**](#output-team_repositories): *(`list(team_repository)`)*<a name="output-team_repositories"></a>
 
   A list of all team repositories.
 
