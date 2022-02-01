@@ -111,7 +111,7 @@ See [variables.tf] and [examples/] for details and use-cases.
 - [**`parent_team_id`**](#var-parent_team_id): *(Optional `number`)*<a name="var-parent_team_id"></a>
 
   The ID of the parent team, if this is a nested team.
-  
+
   Default is to create a root team without a parent.
 
 - [**`ldap_dn`**](#var-ldap_dn): *(Optional `string`)*<a name="var-ldap_dn"></a>
@@ -190,27 +190,27 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 The following attributes are exported in the outputs of the module:
 
-- **`id`**
+- [**`id`**](#output-id): *(`string`)*<a name="output-id"></a>
 
   The ID of the team.
 
-- **`name`**
+- [**`name`**](#output-name): *(`string`)*<a name="output-name"></a>
 
   The name of the team.
 
-- **`slug`**
+- [**`slug`**](#output-slug): *(`string`)*<a name="output-slug"></a>
 
   The Slug of the team.
 
-- **`team`**
+- [**`team`**](#output-team): *(`object(team)`)*<a name="output-team"></a>
 
   The full team object.
 
-- **`team_memberships`**
+- [**`team_memberships`**](#output-team_memberships): *(`list(team_membership)`)*<a name="output-team_memberships"></a>
 
   A list of all team memberships.
 
-- **`team_repositories`**
+- [**`team_repositories`**](#output-team_repositories): *(`list(team_repository)`)*<a name="output-team_repositories"></a>
 
   A list of all team repositories.
 

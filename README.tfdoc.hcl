@@ -253,31 +253,49 @@ section {
     title   = "Module Outputs"
     content = <<-END
       The following attributes are exported in the outputs of the module:
-
-      - **`id`**
-
-        The ID of the team.
-
-      - **`name`**
-
-        The name of the team.
-
-      - **`slug`**
-
-        The Slug of the team.
-
-      - **`team`**
-
-        The full team object.
-
-      - **`team_memberships`**
-
-        A list of all team memberships.
-
-      - **`team_repositories`**
-
-        A list of all team repositories.
     END
+
+    output "id" {
+      type        = string
+      description = <<-END
+        The ID of the team.
+      END
+    }
+
+    output "name" {
+      type        = string
+      description = <<-END
+        The name of the team.
+      END
+    }
+
+    output "slug" {
+      type        = string
+      description = <<-END
+        The Slug of the team.
+      END
+    }
+
+    output "team" {
+      type        = object(team)
+      description = <<-END
+        The full team object.
+      END
+    }
+
+    output "team_memberships" {
+      type        = list(team_membership)
+      description = <<-END
+        A list of all team memberships.
+      END
+    }
+
+    output "team_repositories" {
+      type        = list(team_repository)
+      description = <<-END
+        A list of all team repositories.
+      END
+    }
   }
 
   section {
