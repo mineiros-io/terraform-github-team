@@ -61,8 +61,7 @@ section {
     content = <<-END
       ```hcl
       module "team" {
-        source  = "mineiros-io/team/github"
-        version = "~> 0.8.0"
+        source  = "git@github.com:mineiros-io/terraform-github-team.git?ref=v0.8.0"
 
         name        = "DevOps"
         description = "The DevOps Team"

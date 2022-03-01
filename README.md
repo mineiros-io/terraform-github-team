@@ -47,8 +47,7 @@ This module supports the following resources:
 
 ```hcl
 module "team" {
-  source  = "mineiros-io/team/github"
-  version = "~> 0.8.0"
+  source  = "git@github.com:mineiros-io/terraform-github-team.git?ref=v0.8.0"
 
   name        = "DevOps"
   description = "The DevOps Team"
@@ -174,7 +173,7 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 ### Module Configuration
 
-- [**`module_depends_on`**](#var-module_depends_on): *(Optional `list(any)`)*<a name="var-module_depends_on"></a>
+- [**`module_depends_on`**](#var-module_depends_on): *(Optional `list(object)`)*<a name="var-module_depends_on"></a>
 
   A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
 
