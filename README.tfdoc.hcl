@@ -346,6 +346,21 @@ section {
   }
 
   section {
+    title   = "About Mineiros"
+    content = <<-END
+      [Mineiros][homepage] is a remote-first company headquartered in Berlin, Germany
+      that solves development, automation and security challenges in cloud infrastructure.
+
+      Our vision is to massively reduce time and overhead for teams to manage and
+      deploy production-grade and secure cloud infrastructure.
+
+      We offer commercial support for all of our modules and encourage you to reach out
+      if you have any questions or need help. Feel free to email us at [hello@mineiros.io] or join our
+      [Community Slack channel][slack].
+    END
+  }
+
+  section {
     title   = "Reporting Issues"
     content = <<-END
       We use GitHub [Issues] to track community reported issues and missing features.
@@ -384,6 +399,9 @@ section {
 references {
   ref "homepage" {
     value = "https://mineiros.io/?ref=terraform-github-team"
+  }
+  ref "github-as-code" {
+    value = "https://mineiros.io/github-as-code?ref=terraform-github-repository"
   }
   ref "hello@mineiros.io" {
     value = "mailto:hello@mineiros.io"
