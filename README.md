@@ -29,7 +29,7 @@ A [Terraform] module that offers a more convenient and tested way to provision a
 - [Module Versioning](#module-versioning)
   - [Backwards compatibility in `0.0.z` and `0.y.z` version](#backwards-compatibility-in-00z-and-0yz-version)
 - [About Mineiros](#about-mineiros)
-- [About Mineiros](#about-mineiros)
+- [GitHub as Code](#github-as-code)
 - [Reporting Issues](#reporting-issues)
 - [Contributing](#contributing)
 - [Makefile Targets](#makefile-targets)
@@ -248,17 +248,16 @@ We offer commercial support for all of our modules and encourage you to reach ou
 if you have any questions or need help. Feel free to email us at [hello@mineiros.io] or join our
 [Community Slack channel][slack].
 
-## About Mineiros
+## GitHub as Code
 
-[Mineiros][homepage] is a remote-first company headquartered in Berlin, Germany
-that solves development, automation and security challenges in cloud infrastructure.
+[GitHub as Code][github-as-code] is a commercial solution built on top of
+our open-source Terraform modules for GitHub. It helps our customers to
+manage their GitHub organization more efficiently by enabling anyone in
+their organization to self-service manage on- and offboarding of users,
+repositories, and settings such as branch protections, secrets, and more
+through code.
 
-Our vision is to massively reduce time and overhead for teams to manage and
-deploy production-grade and secure cloud infrastructure.
-
-We offer commercial support for all of our modules and encourage you to reach out
-if you have any questions or need help. Feel free to email us at [hello@mineiros.io] or join our
-[Community Slack channel][slack].
+For details please see [https://www.mineiros.io/github-as-code][github-as-code].
 
 ## Reporting Issues
 
@@ -287,7 +286,7 @@ Copyright &copy; 2020-2022 [Mineiros GmbH][homepage]
 <!-- References -->
 
 [homepage]: https://mineiros.io/?ref=terraform-github-team
-[github-as-code]: https://mineiros.io/github-as-code?ref=terraform-github-repository
+[github-as-code]: https://mineiros.io/github-as-code?ref=terraform-github-team
 [hello@mineiros.io]: mailto:hello@mineiros.io
 [badge-build]: https://github.com/mineiros-io/terraform-github-team/workflows/CI/CD%20Pipeline/badge.svg
 [badge-semver]: https://img.shields.io/github/v/tag/mineiros-io/terraform-github-team.svg?label=latest&sort=semver
