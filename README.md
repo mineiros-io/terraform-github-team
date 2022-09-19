@@ -15,6 +15,7 @@ A [Terraform] module that offers a more convenient and tested way to provision a
 **Attention: This module is incompatible with the Hashicorp GitHub Provider! The latest version of this module supporting `hashicorp/github` provider is `~> 0.6.0`**
 
 
+- [GitHub as Code](#github-as-code)
 - [Module Features](#module-features)
 - [Getting Started](#getting-started)
 - [Module Argument Reference](#module-argument-reference)
@@ -29,11 +30,26 @@ A [Terraform] module that offers a more convenient and tested way to provision a
 - [Module Versioning](#module-versioning)
   - [Backwards compatibility in `0.0.z` and `0.y.z` version](#backwards-compatibility-in-00z-and-0yz-version)
 - [About Mineiros](#about-mineiros)
-- [GitHub as Code](#github-as-code)
 - [Reporting Issues](#reporting-issues)
 - [Contributing](#contributing)
 - [Makefile Targets](#makefile-targets)
 - [License](#license)
+
+## GitHub as Code
+
+[GitHub as Code][github-as-code] is a commercial solution built on top of
+our open-source Terraform modules for GitHub. It helps our customers to
+manage their GitHub organization more efficiently by enabling anyone in
+their organization to **self-service** manage **on- and offboarding of users**,
+**repositories**, and settings such as **branch protections**, **secrets**, and more
+through code. GitHub as Code comes with **pre-configured GitHub Actions
+pipelines** for **change pre-view in Pull Requests**, **fully automated
+rollouts** and **rollbacks**. It's a comprehensive, ready-to-use blueprint
+maintained by our team of platform engineering experts and saves
+companies such as yours tons of time by building on top of a pre-configured
+solution instead of building and maintaining it yourself.
+
+For details please see [https://mineiros.io/github-as-code][github-as-code].
 
 ## Module Features
 
@@ -247,17 +263,6 @@ deploy production-grade and secure cloud infrastructure.
 We offer commercial support for all of our modules and encourage you to reach out
 if you have any questions or need help. Feel free to email us at [hello@mineiros.io] or join our
 [Community Slack channel][slack].
-
-## GitHub as Code
-
-[GitHub as Code][github-as-code] is a commercial solution built on top of
-our open-source Terraform modules for GitHub. It helps our customers to
-manage their GitHub organization more efficiently by enabling anyone in
-their organization to self-service manage on- and offboarding of users,
-repositories, and settings such as branch protections, secrets, and more
-through code.
-
-For details please see [https://www.mineiros.io/github-as-code][github-as-code].
 
 ## Reporting Issues
 
