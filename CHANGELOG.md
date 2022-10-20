@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
+## [0.9.0]
 
-- Update build tools, GitHub Actions and pre-commit hooks from template
+### Added
+
+- Add support for Terraform GitHub Provider version `5.x`
 
 ## [0.8.0]
 
@@ -34,8 +36,7 @@ This needs migration actions if you already used this module with the `hashicorp
 To migrate from a previous version, please ensure that you are using the
 `integrations/github` official GitHub Terraform Provider.
 
-
-``` hcl
+```hcl
 terraform {
   required_version = "~> 1.0"
 
@@ -52,7 +53,7 @@ Once you've updated the provider, a manual state migration is required to
 migrate existing resources to the new provider.
 The following command will replace the provider in the state.
 
-``` bash
+```bash
 terraform state replace-provider registry.terraform.io/hashicorp/github registry.terraform.io/integrations/github
 ```
 
@@ -172,7 +173,8 @@ After you've migrated the state, please run
 - This is the initial release of our terraform-github-team module that supports
   Team, Nested Team, Memberships, Team Repositories.
 
-[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.8.0...HEAD
+[unreleased]: https://github.com/mineiros-io/terraform-github-team/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/mineiros-io/terraform-github-team/compare/v0.5.2...v0.6.0
