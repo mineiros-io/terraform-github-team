@@ -26,8 +26,13 @@ output "team" {
   value       = one(github_team.team)
 }
 
+output "team_members" {
+  description = "A list of all team members (when using github_team_members)."
+  value       = github_team_members.team_members
+}
+
 output "team_memberships" {
-  description = "A list of all team memberships."
+  description = "A list of all team memberships (when using github_team_membership)."
   value       = github_team_membership.team_membership
 }
 
