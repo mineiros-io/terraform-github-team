@@ -187,6 +187,12 @@ See [variables.tf] and [examples/] for details and use-cases.
 
   Default is `true`.
 
+- [**`module_use_members`**](#var-module_use_members): *(Optional `bool`)*<a name="var-module_use_members"></a>
+
+  Wether to use github_team_members or github_team_membership.
+
+  Default is `false`.
+
 ## Module Outputs
 
 The following attributes are exported in the outputs of the module:
@@ -207,9 +213,13 @@ The following attributes are exported in the outputs of the module:
 
   The full team object.
 
+- [**`team_members`**](#output-team_members): *(`list(team_members)`)*<a name="output-team_members"></a>
+
+  A list of all team members (when using github_team_members).
+
 - [**`team_memberships`**](#output-team_memberships): *(`list(team_membership)`)*<a name="output-team_memberships"></a>
 
-  A list of all team memberships.
+  A list of all team memberships (when using github_team_membership).
 
 - [**`team_repositories`**](#output-team_repositories): *(`list(team_repository)`)*<a name="output-team_repositories"></a>
 

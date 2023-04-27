@@ -246,6 +246,14 @@ section {
           Specifies whether resources in the module will be created.
         END
       }
+
+      variable "module_use_members" {
+        type        = bool
+        default     = false
+        description = <<-END
+          Wether to use github_team_members or github_team_membership.
+        END
+      }
     }
   }
 
@@ -283,10 +291,17 @@ section {
       END
     }
 
+    output "team_members" {
+      type        = list(team_members)
+      description = <<-END
+        A list of all team members (when using github_team_members).
+      END
+    }
+
     output "team_memberships" {
       type        = list(team_membership)
       description = <<-END
-        A list of all team memberships.
+        A list of all team memberships (when using github_team_membership).
       END
     }
 

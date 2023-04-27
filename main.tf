@@ -29,8 +29,24 @@ locals {
   memberships = merge(local.maintainers, local.members)
 }
 
+resource "github_team_members" "team_members" {
+  count = var.module_enabled && var.module_use_members ? 1 : 0
+
+  team_id = try(github_team.team[0].id, null)
+
+  dynamic "members" {
+    for_each = { for m in local.memberships : m.username => m }
+    content {
+      username = members.value.username
+      role     = members.value.role
+    }
+  }
+
+  depends_on = [var.module_depends_on]
+}
+
 resource "github_team_membership" "team_membership" {
-  for_each = var.module_enabled ? local.memberships : {}
+  for_each = var.module_enabled && !var.module_use_members ? local.memberships : {}
 
   team_id  = try(github_team.team[0].id, null)
   username = each.value.username

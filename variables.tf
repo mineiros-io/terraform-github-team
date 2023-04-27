@@ -103,3 +103,9 @@ variable "module_depends_on" {
   description = "(Optional) A list of external resources the module depends_on. Default is []."
   default     = []
 }
+
+variable "module_use_members" {
+  type        = bool
+  description = "(Optional) Wether to use github_team_members or github_team_membership."
+  default     = false
+}
